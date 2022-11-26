@@ -1,0 +1,2 @@
+# PathOfWuxia_mod_creator
+侠之道mod制作器，能图形化的生成一些配置文件
