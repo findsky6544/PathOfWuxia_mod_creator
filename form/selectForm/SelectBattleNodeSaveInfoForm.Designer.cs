@@ -29,6 +29,7 @@ namespace 侠之道mod制作器
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.okButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.searchTextBox = new System.Windows.Forms.TextBox();
@@ -39,6 +40,7 @@ namespace 侠之道mod制作器
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.SuspendLayout();
             // 
             // okButton
@@ -87,6 +89,7 @@ namespace 侠之道mod制作器
             this.columnHeader4,
             this.columnHeader6,
             this.columnHeader7});
+            this.battleNodeSaveInfoListView.ContextMenuStrip = this.contextMenuStrip1;
             this.battleNodeSaveInfoListView.FullRowSelect = true;
             this.battleNodeSaveInfoListView.HideSelection = false;
             this.battleNodeSaveInfoListView.Location = new System.Drawing.Point(12, 39);
@@ -124,6 +127,12 @@ namespace 侠之道mod制作器
             this.columnHeader7.Text = "失败提示";
             this.columnHeader7.Width = 200;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 26);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
+            // 
             // SelectBattleNodeSaveInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -154,5 +163,6 @@ namespace 侠之道mod制作器
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }

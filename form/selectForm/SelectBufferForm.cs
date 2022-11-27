@@ -216,7 +216,7 @@ namespace 侠之道mod制作器
         private void contextMenuStrip1_Opening(object sender, System.ComponentModel.CancelEventArgs e)
         {
             contextMenuStrip1.Items.Clear();
-            Utils.addToolStripMenuItem("buffer", ":" + bufferListView.SelectedItems[0].SubItems[0].Text, contextMenuStrip1);
+            Utils.addToolStripMenuItem("buffer", ":" + bufferListView.SelectedItems[0].SubItems[1].Text, contextMenuStrip1);
             if (contextMenuStrip1.Items.Count > 0)
             {
                 e.Cancel = false;

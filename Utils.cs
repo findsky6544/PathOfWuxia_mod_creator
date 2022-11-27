@@ -3725,6 +3725,36 @@ namespace 侠之道mod制作器
                         cms.Items.Add(ToolStripMenuItem);
                     }
                 }
+                else if (type == "battle/schedule")
+                {
+                    if (DataManager.dict["battle/schedule"].Contains(propertyStr) || DataManager.dict["battle/schedule_cus"].Contains(propertyStr))
+                    {
+                        ToolStripMenuItem ToolStripMenuItem = new ToolStripMenuItem("查看战斗流程(" + DataManager.getScheduleName(propertyStr) + ")");
+                        ToolStripMenuItem.Tag = propertyStr;
+                        ToolStripMenuItem.Click += readBattleScheduleToolStripMenuItem_Click;
+                        cms.Items.Add(ToolStripMenuItem);
+                    }
+                }
+                else if (type == "Adjustment")
+                {
+                    if (DataManager.dict["Adjustment"].Contains(propertyStr) || DataManager.dict["Adjustment_cus"].Contains(propertyStr))
+                    {
+                        ToolStripMenuItem ToolStripMenuItem = new ToolStripMenuItem("查看整备(" + DataManager.getAdjustmentName(propertyStr) + ")");
+                        ToolStripMenuItem.Tag = propertyStr;
+                        ToolStripMenuItem.Click += readAdjustmentToolStripMenuItem_Click;
+                        cms.Items.Add(ToolStripMenuItem);
+                    }
+                }
+                else if (type == "BattleArea")
+                {
+                    if (DataManager.dict["BattleArea"].Contains(propertyStr) || DataManager.dict["BattleArea_cus"].Contains(propertyStr))
+                    {
+                        ToolStripMenuItem ToolStripMenuItem = new ToolStripMenuItem("查看战斗(" + DataManager.getBattleAreaRemark(propertyStr) + ")");
+                        ToolStripMenuItem.Tag = propertyStr;
+                        ToolStripMenuItem.Click += readBattleAreaToolStripMenuItem_Click;
+                        cms.Items.Add(ToolStripMenuItem);
+                    }
+                }
                 else if(type == "Talk")
                 {
                     if (DataManager.dict["Talk"].Contains(propertyStr) || DataManager.dict["Talk_cus"].Contains(propertyStr))
@@ -3755,26 +3785,6 @@ namespace 侠之道mod制作器
                         cms.Items.Add(ToolStripMenuItem);
                     }
                 }
-                else if (type == "BattleArea")
-                {
-                    if (DataManager.dict["BattleArea"].Contains(propertyStr) || DataManager.dict["BattleArea_cus"].Contains(propertyStr))
-                    {
-                        ToolStripMenuItem ToolStripMenuItem = new ToolStripMenuItem("查看战斗(" + DataManager.getBattleAreaRemark(propertyStr) + ")");
-                        ToolStripMenuItem.Tag = propertyStr;
-                        ToolStripMenuItem.Click += readBattleAreaToolStripMenuItem_Click;
-                        cms.Items.Add(ToolStripMenuItem);
-                    }
-                }
-                else if (type == "Adjustment")
-                {
-                    if (DataManager.dict["Adjustment"].Contains(propertyStr) || DataManager.dict["Adjustment_cus"].Contains(propertyStr))
-                    {
-                        ToolStripMenuItem ToolStripMenuItem = new ToolStripMenuItem("查看整备(" + DataManager.getAdjustmentName(propertyStr) + ")");
-                        ToolStripMenuItem.Tag = propertyStr;
-                        ToolStripMenuItem.Click += readAdjustmentToolStripMenuItem_Click;
-                        cms.Items.Add(ToolStripMenuItem);
-                    }
-                }
             }
         }
         private static void readBuffToolStripMenuItem_Click(object sender, EventArgs e)
@@ -3784,6 +3794,16 @@ namespace 侠之道mod制作器
 
 
             BufferInfoForm form = new BufferInfoForm(bufferId, true);
+
+            form.Show();
+        }
+        private static void readBattleScheduleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ToolStripMenuItem ToolStripMenuItem = sender as ToolStripMenuItem;
+            string id = ToolStripMenuItem.Tag.ToString();
+
+
+            ScheduleInfoForm form = new ScheduleInfoForm(id, true);
 
             form.Show();
         }

@@ -151,5 +151,19 @@ namespace 侠之道mod制作器
                 searchBuffer(searchTextBox.Text, false, true);
             }
         }
+
+        private void contextMenuStrip1_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            contextMenuStrip1.Items.Clear();
+            Utils.addToolStripMenuItem("battle/schedule", ":" + battleNodeSaveInfoListView.SelectedItems[0].SubItems[0].Text, contextMenuStrip1);
+            if (contextMenuStrip1.Items.Count > 0)
+            {
+                e.Cancel = false;
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }
