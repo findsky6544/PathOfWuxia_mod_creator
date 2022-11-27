@@ -76,7 +76,7 @@ namespace 侠之道mod制作器
 
         private void selectReadFinishMovieButton_Click(object sender, EventArgs e)
         {
-            SelectCinematicForm form = new SelectCinematicForm(this, SchedulerIdTextBox, false);
+            SelectConfigScheduleForm form = new SelectConfigScheduleForm(this, SchedulerIdTextBox, false);
             form.ShowDialog();
         }
 
