@@ -25,8 +25,16 @@ namespace 侠之道mod制作器
             InitializeComponent();
         }
 
-        public CinematicInfoForm(string cinematicId,bool canEdit) : this()
+        public CinematicInfoForm(string type,string cinematicId,bool canEdit) : this()
         {
+            if(type == "cinematic")
+            {
+                Text = "cinematic信息";
+            }
+            else
+            {
+                Text = "config/schedule信息";
+            }
             this.cinematicId = cinematicId;
 
             if (!canEdit)
@@ -935,7 +943,7 @@ namespace 侠之道mod制作器
                 cinematicId = node.cinematicId;
             }
 
-            CinematicInfoForm form = new CinematicInfoForm(cinematicId,false);
+            CinematicInfoForm form = new CinematicInfoForm("cinematic",cinematicId,false);
 
             form.Show();
         }

@@ -45,8 +45,7 @@ namespace 侠之道mod制作器
 
         private void newScheduleButton_Click(object sender, EventArgs e)
         {
-            CinematicInfoForm form = new CinematicInfoForm(null,true);
-            form.Text = "config/schedule信息";
+            CinematicInfoForm form = new CinematicInfoForm("config/schedule", null,true);
             form.ShowDialog();
         }
 
@@ -61,8 +60,7 @@ namespace 侠之道mod制作器
             {
                 ListViewItem lvi = cinematicListView.SelectedItems[0];
 
-                CinematicInfoForm form = new CinematicInfoForm(lvi.SubItems[0].Text, true);
-                form.Text = "Config/Schedule信息";
+                CinematicInfoForm form = new CinematicInfoForm("config/schedule",lvi.SubItems[0].Text, true);
 
                 form.ShowDialog();
             }

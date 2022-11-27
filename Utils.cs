@@ -3823,7 +3823,7 @@ namespace 侠之道mod制作器
             string id = ToolStripMenuItem.Tag.ToString();
 
 
-            CinematicInfoForm form = new CinematicInfoForm(id, true);
+            CinematicInfoForm form = new CinematicInfoForm("cinematic", id, true);
 
             form.Show();
         }

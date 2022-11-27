@@ -51,7 +51,7 @@ namespace 侠之道mod制作器
         }
         private void readCinematicToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CinematicInfoForm form = new CinematicInfoForm(CinematicIdTextBox.Text, false);
+            CinematicInfoForm form = new CinematicInfoForm("cinematic",CinematicIdTextBox.Text, false);
 
             form.Show();
         }

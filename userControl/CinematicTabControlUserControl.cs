@@ -47,7 +47,7 @@ namespace 侠之道mod制作器
 
         private void newCinematicButton_Click(object sender, EventArgs e)
         {
-            CinematicInfoForm form = new CinematicInfoForm(null,true);
+            CinematicInfoForm form = new CinematicInfoForm("cinematic",null,true);
             form.ShowDialog();
         }
 
@@ -62,8 +62,7 @@ namespace 侠之道mod制作器
             {
                 ListViewItem lvi = cinematicListView.SelectedItems[0];
 
-                CinematicInfoForm form = new CinematicInfoForm(lvi.SubItems[0].Text, true);
-                form.Text = "Cinematic信息";
+                CinematicInfoForm form = new CinematicInfoForm("cinematic",lvi.SubItems[0].Text, true);
 
                 form.ShowDialog();
             }

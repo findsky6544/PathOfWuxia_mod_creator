@@ -95,7 +95,7 @@ namespace 侠之道mod制作器
                 cinematicId = afterLoseMovieTextBox.Text;
             }
 
-            CinematicInfoForm form = new CinematicInfoForm(cinematicId,false);
+            CinematicInfoForm form = new CinematicInfoForm("cinematic",cinematicId,false);
 
             form.Show();
         }
