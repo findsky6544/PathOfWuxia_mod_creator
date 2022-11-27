@@ -23,7 +23,7 @@ namespace 侠之道mod制作器
         public void refrashListView()
         {
             RewardListView.Items.Clear();
-            RewardListView.Items.AddRange(DataManager.allRewardLvis.Values.Where(x => (showOriginalRewardCheckBox.Checked || x.SubItems[4].Text == "1")).ToArray());
+            RewardListView.Items.AddRange(DataManager.allRewardLvis.Values.Where(x => (showOriginalRewardCheckBox.Checked || x.SubItems[x.SubItems.Count - 1].Text == "1")).ToArray());
             if (RewardListView.SelectedItems.Count > 0)
             {
                 RewardListView.EnsureVisible(RewardListView.SelectedItems[0].Index);

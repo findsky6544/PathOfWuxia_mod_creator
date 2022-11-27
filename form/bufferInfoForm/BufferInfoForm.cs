@@ -571,7 +571,6 @@ namespace 侠之道mod制作器
                 DataManager.dict["buffer_cus"].Add(idTextBox.Text, buffer);
             }
 
-            BufferTabControlUserControl bufferTabControlUserControl = (BufferTabControlUserControl)MainForm.userControls["buffer"];
             if (DataManager.allBufferLvis.ContainsKey(lvi.SubItems[1].Text))
             {
                 ListViewItem oldLvi = DataManager.allBufferLvis[idTextBox.Text];
@@ -583,7 +582,11 @@ namespace 侠之道mod制作器
             else
             {
                 DataManager.allBufferLvis.Add(idTextBox.Text, lvi);
-                bufferTabControlUserControl.getBufferListView().Items.Add(lvi);
+                if (MainForm.userControls.ContainsKey("buffer"))
+                {
+                    BufferTabControlUserControl bufferTabControlUserControl = (BufferTabControlUserControl)MainForm.userControls["buffer"];
+                    bufferTabControlUserControl.getBufferListView().Items.Add(lvi);
+                }
             }
         }
 

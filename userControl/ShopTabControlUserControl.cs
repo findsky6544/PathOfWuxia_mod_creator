@@ -23,7 +23,7 @@ namespace 侠之道mod制作器
         public void refrashListView()
         {
             ShopListView.Items.Clear();
-            ShopListView.Items.AddRange(DataManager.allShopLvis.Values.Where(x => (showOriginalShopCheckBox.Checked || x.SubItems[4].Text == "1")).ToArray());
+            ShopListView.Items.AddRange(DataManager.allShopLvis.Values.Where(x => (showOriginalShopCheckBox.Checked || x.SubItems[x.SubItems.Count - 1].Text == "1")).ToArray());
             if (ShopListView.SelectedItems.Count > 0)
             {
                 ShopListView.EnsureVisible(ShopListView.SelectedItems[0].Index);

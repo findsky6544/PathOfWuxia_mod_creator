@@ -34,10 +34,9 @@ namespace 侠之道mod制作器
                     Directory.CreateDirectory(modNameTextBox.Text + "\\config\\schedule");
                     Directory.CreateDirectory(modNameTextBox.Text + "\\config\\textfiles");
 
-                    string[] textfilesArray = new string[] { "Adjustment", "Alchemy", "AnimationMapping", "BattleArea", "BattleEventCube", "BattleGrid", "Book", "CharacterBehaviour", "CharacterExterior", "CharacterInfo", "Elective", "EndingMovie", "Evaluation", "EventCube", "Favorability", "Forge", "GameFormula", "Help", "HelpDescription", "Mantra", "Map", "Npc", "Nurturance", "Props", "Quest", "RegistrationBonus", "Reward", "Round", "Shop", "Skill", "StringTable", "Talk", "Trait" };
-                    for (int i = 0; i < textfilesArray.Length; i++)
+                    for (int i = 0; i < MainForm.textfilesArray.Length; i++)
                     {
-                        FileStream fs = File.Create(modNameTextBox.Text + "\\config\\textfiles\\" + textfilesArray[i] + ".txt");
+                        FileStream fs = File.Create(modNameTextBox.Text + "\\config\\textfiles\\" + MainForm.textfilesArray[i] + "_modify.txt");
                         fs.Close();
                     }
                 }
@@ -53,8 +52,9 @@ namespace 侠之道mod制作器
 
                 MainForm mainForm = (MainForm)Owner;
                 mainForm.getConfigTreeView().Nodes.Clear();
-                mainForm.getConfigTreeView().Nodes.Add(modNameTextBox.Text);
-                mainForm.LoadModDictionary(modNameTextBox.Text, mainForm.getConfigTreeView().Nodes[0]);
+                TreeNode modNameNode = mainForm.getConfigTreeView().Nodes.Add(modNameTextBox.Text);
+                TreeNode configNode = modNameNode.Nodes.Add("config");
+                mainForm.LoadConfigTree("config", configNode);
                 mainForm.getConfigTreeView().ExpandAll();
 
                 DialogResult = DialogResult.OK;

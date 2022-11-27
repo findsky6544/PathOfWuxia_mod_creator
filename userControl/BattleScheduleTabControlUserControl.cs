@@ -22,7 +22,7 @@ namespace 侠之道mod制作器
         public void refrashListView()
         {
             scheduleListView.Items.Clear();
-            scheduleListView.Items.AddRange(DataManager.allBattleScheduleLvis.Values.Where(x => (showOriginalScheduleCheckBox.Checked || x.SubItems[6].Text == "1")).ToArray());
+            scheduleListView.Items.AddRange(DataManager.allBattleScheduleLvis.Values.Where(x => (showOriginalScheduleCheckBox.Checked || x.SubItems[x.SubItems.Count - 1].Text == "1")).ToArray());
             if (scheduleListView.SelectedItems.Count > 0)
             {
                 scheduleListView.EnsureVisible(scheduleListView.SelectedItems[0].Index);

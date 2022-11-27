@@ -23,7 +23,7 @@ namespace 侠之道mod制作器
         public void refrashListView()
         {
             cinematicListView.Items.Clear();
-            cinematicListView.Items.AddRange(DataManager.allCinematicLvis.Values.Where(x => (showOriginalCinematicCheckBox.Checked || x.SubItems[4].Text == "1")).ToArray());
+            cinematicListView.Items.AddRange(DataManager.allCinematicLvis.Values.Where(x => (showOriginalCinematicCheckBox.Checked || x.SubItems[x.SubItems.Count - 1].Text == "1")).ToArray());
             if (cinematicListView.SelectedItems.Count > 0)
             {
                 cinematicListView.EnsureVisible(cinematicListView.SelectedItems[0].Index);

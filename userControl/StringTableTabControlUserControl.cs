@@ -23,7 +23,7 @@ namespace 侠之道mod制作器
         public void refrashListView()
         {
             StringTableListView.Items.Clear();
-            StringTableListView.Items.AddRange(DataManager.allStringTableLvis.Values.Where(x => (showOriginalStringTableCheckBox.Checked || x.SubItems[4].Text == "1")).ToArray());
+            StringTableListView.Items.AddRange(DataManager.allStringTableLvis.Values.Where(x => (showOriginalStringTableCheckBox.Checked || x.SubItems[x.SubItems.Count - 1].Text == "1")).ToArray());
             if (StringTableListView.SelectedItems.Count > 0)
             {
                 StringTableListView.EnsureVisible(StringTableListView.SelectedItems[0].Index);

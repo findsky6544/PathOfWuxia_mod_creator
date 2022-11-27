@@ -23,7 +23,7 @@ namespace 侠之道mod制作器
         public void refrashListView()
         {
             RoundListView.Items.Clear();
-            RoundListView.Items.AddRange(DataManager.allRoundLvis.Values.Where(x => (showOriginalRoundCheckBox.Checked || x.SubItems[4].Text == "1")).ToArray());
+            RoundListView.Items.AddRange(DataManager.allRoundLvis.Values.Where(x => (showOriginalRoundCheckBox.Checked || x.SubItems[x.SubItems.Count - 1].Text == "1")).ToArray());
             if (RoundListView.SelectedItems.Count > 0)
             {
                 RoundListView.EnsureVisible(RoundListView.SelectedItems[0].Index);

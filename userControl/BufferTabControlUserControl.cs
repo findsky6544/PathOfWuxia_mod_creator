@@ -25,7 +25,7 @@ namespace 侠之道mod制作器
         public void refrashListView()
         {
             bufferListView.Items.Clear();
-            bufferListView.Items.AddRange(DataManager.allBufferLvis.Values.Where(x => (showOriginalBufferCheckBox.Checked || x.SubItems[9].Text == "1")).ToArray());
+            bufferListView.Items.AddRange(DataManager.allBufferLvis.Values.Where(x => (showOriginalBufferCheckBox.Checked || x.SubItems[x.SubItems.Count - 1].Text == "1")).ToArray());
             if (bufferListView.SelectedItems.Count > 0)
             {
                 bufferListView.EnsureVisible(bufferListView.SelectedItems[0].Index);

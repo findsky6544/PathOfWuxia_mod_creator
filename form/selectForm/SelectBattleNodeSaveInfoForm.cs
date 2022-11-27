@@ -46,13 +46,13 @@ namespace 侠之道mod制作器
 
         private void okButton_Click(object sender, EventArgs e)
         {
-            textBox.Text = battleNodeSaveInfoListView.SelectedItems[0].SubItems[1].Text;
+            textBox.Text = battleNodeSaveInfoListView.SelectedItems[0].SubItems[0].Text;
             Close();
         }
 
         private void bufferListView_DoubleClick(object sender, EventArgs e)
         {
-            textBox.Text = battleNodeSaveInfoListView.SelectedItems[0].SubItems[1].Text;
+            textBox.Text = battleNodeSaveInfoListView.SelectedItems[0].SubItems[0].Text;
             Close();
         }
 

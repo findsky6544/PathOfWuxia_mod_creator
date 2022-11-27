@@ -7,6 +7,7 @@ using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
 using 侠之道mod制作器.form;
+using static Mono.Security.X509.X520;
 
 namespace 侠之道mod制作器
 {
@@ -15,6 +16,7 @@ namespace 侠之道mod制作器
         public static string modName = "";
         public static string savePath = "";
         private static string logPath = "output.log";
+        public static string[] textfilesArray = new string[] { "Adjustment", "Alchemy", "AnimationMapping", "BattleArea", "BattleEventCube", "BattleGrid", "Book", "CharacterBehaviour", "CharacterExterior", "CharacterInfo", "Elective", "EndingMovie", "Evaluation", "EventCube", "Favorability", "Forge", "GameFormula", "Help", "HelpDescription", "Mantra", "Map", "Npc", "Nurturance", "Props", "Quest", "RegistrationBonus", "Reward", "Round", "Shop", "Skill", "StringTable", "Talk", "Trait" };
 
         //public Thread showLoadDataFormThread = null;
         public static LoadDataForm loadDataForm = new LoadDataForm();
@@ -82,11 +84,11 @@ namespace 侠之道mod制作器
             {
                 NewModForm form = new NewModForm();
                 form.Owner = this;
-                if(form.ShowDialog() == DialogResult.OK)   //重新new一个Show出来
+                if (form.ShowDialog() == DialogResult.OK)   //重新new一个Show出来
                 {
                     DataManager.dict.Clear();
                     userControls.Clear();
-                    foreach(TabPage tabPage in ConfigPageTabControl.TabPages)
+                    foreach (TabPage tabPage in ConfigPageTabControl.TabPages)
                     {
                         ConfigPageTabControl.TabPages.Remove(tabPage);
                     }
@@ -106,7 +108,7 @@ namespace 侠之道mod制作器
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 pathArray = dialog.SelectedPath.Split('\\');
-                savePath = dialog.SelectedPath.Substring(0,dialog.SelectedPath.LastIndexOf("\\")) + "\\";
+                savePath = dialog.SelectedPath.Substring(0, dialog.SelectedPath.LastIndexOf("\\")) + "\\";
 
                 modName = pathArray[pathArray.Length - 1];
                 DataManager.dict.Clear();
@@ -116,34 +118,49 @@ namespace 侠之道mod制作器
                     ConfigPageTabControl.TabPages.Remove(tabPage);
                 }
                 ConfigTreeView.Nodes.Clear();
-                ConfigTreeView.Nodes.Add(modName);
-                LoadModDictionary(savePath + modName, ConfigTreeView.Nodes[0]);
+                TreeNode modNameNode = ConfigTreeView.Nodes.Add(modName);
+                TreeNode configNode = modNameNode.Nodes.Add("config");
+                LoadConfigTree("config", configNode);
                 ConfigTreeView.ExpandAll();
                 //LoadDatas();
             }
         }
 
-        public void LoadModDictionary(string modName, TreeNode treeNode)
+        public void LoadConfigTree(string path, TreeNode treeNode)
         {
-            DirectoryInfo folder = new DirectoryInfo(modName);
+            DirectoryInfo folder = new DirectoryInfo(path);
             List<DirectoryInfo> directoryList = folder.GetDirectories().ToList();
             for (int i = 0; i < directoryList.Count; i++)
             {
-                if (directoryList[i].Name == "effect" || directoryList[i].Name == "movepath" || directoryList[i].Name == "Achievement.txt")
+                string name = directoryList[i].Name;
+                if (name == "chs" || name == "cht")
+                {
+                    LoadConfigTree(path + '\\' + name, treeNode);
+                    continue;
+                }
+                if (name.ToLower() == "effect" || name.ToLower() == "movepath")
                 {
                     continue;
                 }
-                TreeNode node = treeNode.Nodes.Add(directoryList[i].Name);
-                if (directoryList[i].Name == "buffer" || directoryList[i].Name == "schedule" || directoryList[i].Name == "cinematic")
+                TreeNode node = treeNode.Nodes.Add(name);
+                if (name.ToLower() == "buffer" || name.ToLower() == "schedule" || name.ToLower() == "cinematic")
                 {
                     continue;
                 }
-                LoadModDictionary(modName + '\\' + directoryList[i].Name, node);
+                LoadConfigTree(path + '\\' + name, node);
             }
             List<FileInfo> fileList = folder.GetFiles().ToList();
-            for (int i = 0; i < fileList.Count; i++)
+            if (fileList != null)
             {
-                treeNode.Nodes.Add(fileList[i].Name);
+                for (int i = 0; i < fileList.Count; i++)
+                {
+                    string name = fileList[i].Name;
+                    if (folder.Name == "textfiles" && !textfilesArray.Contains(name.Split('.')[0]))
+                    {
+                        continue;
+                    }
+                    treeNode.Nodes.Add(name);
+                }
             }
         }
 
@@ -155,12 +172,12 @@ namespace 侠之道mod制作器
             for (int i = 0; i < ConfigPageTabControl.TabCount; i++)
             {
                 tabPage = ConfigPageTabControl.TabPages[i];
-                if (tabPage.Text.Trim() == e.Node.Text || tabPage.Text.Trim() == e.Node.Parent.Text + "\\" +e.Node.Text)
+                if (tabPage.Text.ToLower().Trim() == e.Node.Text.ToLower() || tabPage.Text.ToLower().Trim() == (e.Node.Parent.Text + "\\" + e.Node.Text).ToLower())
                 {
                     ConfigPageTabControl.SelectedIndex = i;
                     return;
                 }
-                if (tabPage.Text.Trim() + ".txt" == e.Node.Text || tabPage.Text.Trim() + ".txt" == e.Node.Parent.Text + "\\" +e.Node.Text)
+                if (tabPage.Text.ToLower().Trim() + ".txt" == e.Node.Text.ToLower() || tabPage.Text.ToLower().Trim() + ".txt" == e.Node.Parent.Text.ToLower() + "\\" + e.Node.Text.ToLower())
                 {
                     ConfigPageTabControl.SelectedIndex = i;
                     return;
@@ -175,7 +192,7 @@ namespace 侠之道mod制作器
                     loadDataFormThread.Start();
                     DataManager.LoadBuffer(false);
                     loadDataForm.getOneProgressBar().Value++;
-                    loadDataForm.getOneLabel().Text = loadDataForm.getOneProgressBar().Value + "\\" +loadDataForm.getOneProgressBar().Maximum;
+                    loadDataForm.getOneLabel().Text = loadDataForm.getOneProgressBar().Value + "\\" + loadDataForm.getOneProgressBar().Maximum;
                 }
                 DataManager.allBufferLvis = DataManager.createBufferLvis();
 
@@ -193,7 +210,7 @@ namespace 侠之道mod制作器
                         loadDataFormThread.Start();
                         DataManager.LoadBattleSchedule(false);
                         loadDataForm.getOneProgressBar().Value++;
-                        loadDataForm.getOneLabel().Text = loadDataForm.getOneProgressBar().Value + "\\" +loadDataForm.getOneProgressBar().Maximum;
+                        loadDataForm.getOneLabel().Text = loadDataForm.getOneProgressBar().Value + "\\" + loadDataForm.getOneProgressBar().Maximum;
                     }
                     DataManager.allBattleScheduleLvis = DataManager.createBattleScheduleLvis();
 
@@ -208,14 +225,14 @@ namespace 侠之道mod制作器
                         loadDataFormThread.Start();
                         DataManager.LoadConfigSchedule(false);
                         loadDataForm.getOneProgressBar().Value++;
-                        loadDataForm.getOneLabel().Text = loadDataForm.getOneProgressBar().Value + "\\" +loadDataForm.getOneProgressBar().Maximum;
+                        loadDataForm.getOneLabel().Text = loadDataForm.getOneProgressBar().Value + "\\" + loadDataForm.getOneProgressBar().Maximum;
                     }
                     DataManager.allConfigScheduleLvis = DataManager.createConfigScheduleLvis();
 
                     tabControlUserControl = new ConfigScheduleTabControlUserControl(this);
                     tabPage = ((ConfigScheduleTabControlUserControl)tabControlUserControl).GetTabControl().TabPages[0];
                 }
-                userControls.Add(e.Node.Parent.Text + "\\" +e.Node.Text, tabControlUserControl);
+                userControls.Add(e.Node.Parent.Text + "\\" + e.Node.Text, tabControlUserControl);
 
             }
             else if (e.Node.Text == "cinematic")
@@ -229,7 +246,7 @@ namespace 侠之道mod制作器
                     {
                         loadDataForm.getOneProgressBar().Value++;
                     }
-                    loadDataForm.getOneLabel().Text = loadDataForm.getOneProgressBar().Value + "\\" +loadDataForm.getOneProgressBar().Maximum;
+                    loadDataForm.getOneLabel().Text = loadDataForm.getOneProgressBar().Value + "\\" + loadDataForm.getOneProgressBar().Maximum;
                 }
                 DataManager.allCinematicLvis = DataManager.createCinematicLvis();
 
@@ -246,7 +263,7 @@ namespace 侠之道mod制作器
                     loadDataFormThread.Start();
                     DataManager.LoadTextfile(name);
                     loadDataForm.getOneProgressBar().Value++;
-                    loadDataForm.getOneLabel().Text = loadDataForm.getOneProgressBar().Value + "\\" +loadDataForm.getOneProgressBar().Maximum;
+                    loadDataForm.getOneLabel().Text = loadDataForm.getOneProgressBar().Value + "\\" + loadDataForm.getOneProgressBar().Maximum;
                 }
                 Type clazz = Type.GetType("侠之道mod制作器.DataManager");
                 FieldInfo field = clazz.GetField("all" + name + "Lvis");

@@ -3783,7 +3783,7 @@ namespace 侠之道mod制作器
             string bufferId = readBuffToolStripMenuItem.Tag.ToString();
 
 
-            BufferInfoForm form = new BufferInfoForm(bufferId, false);
+            BufferInfoForm form = new BufferInfoForm(bufferId, true);
 
             form.Show();
         }
@@ -3793,7 +3793,7 @@ namespace 侠之道mod制作器
             string id = ToolStripMenuItem.Tag.ToString();
 
 
-            TalkInfoForm form = new TalkInfoForm(id, false);
+            TalkInfoForm form = new TalkInfoForm(id, true);
 
             form.Show();
         }
@@ -3803,7 +3803,7 @@ namespace 侠之道mod制作器
             string id = ToolStripMenuItem.Tag.ToString();
 
 
-            CinematicInfoForm form = new CinematicInfoForm(id, false);
+            CinematicInfoForm form = new CinematicInfoForm(id, true);
 
             form.Show();
         }
@@ -3813,7 +3813,7 @@ namespace 侠之道mod制作器
             string id = ToolStripMenuItem.Tag.ToString();
 
 
-            BattleAreaInfoForm form = new BattleAreaInfoForm(id, false);
+            BattleAreaInfoForm form = new BattleAreaInfoForm(id, true);
 
             form.Show();
         }
@@ -3823,7 +3823,7 @@ namespace 侠之道mod制作器
             string id = ToolStripMenuItem.Tag.ToString();
 
 
-            AdjustmentInfoForm form = new AdjustmentInfoForm(id, false);
+            AdjustmentInfoForm form = new AdjustmentInfoForm(id, true);
 
             form.Show();
         }

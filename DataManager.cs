@@ -763,7 +763,7 @@ namespace 侠之道mod制作器
 
                     //Type constructed = typeof(Dictionary<,>).MakeGenericType(new Type[] { typeof(string), itemType });
                     //itemDic = (IDictionary)Activator.CreateInstance(constructed);
-                    fileName = MainForm.savePath + MainForm.modName + "\\" + modTextFilePath + "\\" + itemType.Name + ".txt";
+                    fileName = MainForm.savePath + MainForm.modName + "\\" + modTextFilePath + "\\" + itemType.Name + "_modify.txt";
 
                     LoadTextfile(itemType, fileName, true);
                     /*if (File.Exists(fileName))
@@ -1361,7 +1361,7 @@ namespace 侠之道mod制作器
             lvi.SubItems.Add(buffer.Oriented + "(" + EnumData.GetDisplayName(buffer.Oriented) + ")");
             lvi.SubItems.Add(buffer.Times.ToString());
             lvi.SubItems.Add(buffer.Overlay.ToString());
-            lvi.SubItems.Add(source.Split('\t')[8]);
+            lvi.SubItems.Add("");
 
             if (isCustom)
             {

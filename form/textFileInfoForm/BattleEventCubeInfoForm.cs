@@ -71,10 +71,10 @@ namespace 侠之道mod制作器
                 }
 
                 //写文件
-                string savePath = MainForm.savePath + MainForm.modName + "\\" + DataManager.modTextFilePath + "\\BattleEventCube.txt";
+                string savePath = MainForm.savePath + MainForm.modName + "\\" + DataManager.modTextFilePath + "\\BattleEventCube_modify.txt";
                 if (!File.Exists(savePath))
                 {
-                    Directory.CreateDirectory(savePath);
+                    FileStream fs = File.Create(savePath);fs.Close();
                 }
                 string content = "";
                 using (StreamReader sr = new StreamReader(savePath))

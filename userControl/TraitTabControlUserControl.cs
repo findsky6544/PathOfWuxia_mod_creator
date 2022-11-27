@@ -23,7 +23,7 @@ namespace 侠之道mod制作器
         public void refrashListView()
         {
             TraitListView.Items.Clear();
-            TraitListView.Items.AddRange(DataManager.allTraitLvis.Values.Where(x => (showOriginalTraitCheckBox.Checked || x.SubItems[4].Text == "1")).ToArray());
+            TraitListView.Items.AddRange(DataManager.allTraitLvis.Values.Where(x => (showOriginalTraitCheckBox.Checked || x.SubItems[x.SubItems.Count - 1].Text == "1")).ToArray());
             if (TraitListView.SelectedItems.Count > 0)
             {
                 TraitListView.EnsureVisible(TraitListView.SelectedItems[0].Index);

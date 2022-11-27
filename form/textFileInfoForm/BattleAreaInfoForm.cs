@@ -192,10 +192,10 @@ namespace 侠之道mod制作器
                 }
 
                 //写文件
-                string savePath = MainForm.savePath + MainForm.modName + "\\" + DataManager.modTextFilePath + "\\BattleArea.txt";
+                string savePath = MainForm.savePath + MainForm.modName + "\\" + DataManager.modTextFilePath + "\\BattleArea_modify.txt";
                 if (!File.Exists(savePath))
                 {
-                    Directory.CreateDirectory(savePath);
+                    FileStream fs = File.Create(savePath);fs.Close();
                 }
                 string content = "";
                 using (StreamReader sr = new StreamReader(savePath))
@@ -282,7 +282,6 @@ namespace 侠之道mod制作器
 
                 
 
-                BattleAreaTabControlUserControl BattleAreaTabControlUserControl = (BattleAreaTabControlUserControl)MainForm.userControls["BattleArea"];
                 if (DataManager.allBattleAreaLvis.ContainsKey(lvi.Text))
                 {
                     ListViewItem oldLvi = DataManager.allBattleAreaLvis[idTextBox.Text];
@@ -294,7 +293,11 @@ namespace 侠之道mod制作器
                 else
                 {
                     DataManager.allBattleAreaLvis.Add(idTextBox.Text, lvi);
-                    BattleAreaTabControlUserControl.getBattleAreaListView().Items.Add(lvi);
+                    if (MainForm.userControls.ContainsKey("BattleArea"))
+                    {
+                        BattleAreaTabControlUserControl BattleAreaTabControlUserControl = (BattleAreaTabControlUserControl)MainForm.userControls["BattleArea"];
+                        BattleAreaTabControlUserControl.getBattleAreaListView().Items.Add(lvi);
+                    }
                 }
             }
             catch (Exception ex)

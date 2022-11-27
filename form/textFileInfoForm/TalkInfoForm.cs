@@ -174,7 +174,7 @@ namespace 侠之道mod制作器
                     TalkerIdTextBox.Text = talk.TalkerId;
                     EmotionTypeComboBox.Text = EnumData.GetDisplayName(talk.EmotionType);
                     MessageTypeComboBox.Text = EnumData.GetDisplayName(talk.MessageType);
-                    MessageTextBox.Text = talk.Message;
+                    MessageTextBox.Text = Utils.replaceRichTextReadIn(talk.Message,flowLayoutPanel1);
                     FailTalkIdTextBox.Text = talk.FailTalkId;
                     NextTalkTypeComboBox.Text = EnumData.GetDisplayName(talk.NextTalkType);
                     NextTalkIdTextBox.Text = talk.NextTalkId;
@@ -225,7 +225,7 @@ namespace 侠之道mod制作器
 
         public string getResultStr()
         {
-            string result = idTextBox.Text + "\t" + TalkerIdTextBox.Text + "\t" + ((ComboBoxItem)EmotionTypeComboBox.SelectedItem).key + "\t" + ((ComboBoxItem)MessageTypeComboBox.SelectedItem).key + "\t" + MessageTextBox.Text + "\t" + FailTalkIdTextBox.Text + "\t" + ((ComboBoxItem)NextTalkTypeComboBox.SelectedItem).key + "\t" + NextTalkIdTextBox.Text + "\t" + AnimationTextBox.Text + "\t";
+            string result = idTextBox.Text + "\t" + TalkerIdTextBox.Text + "\t" + ((ComboBoxItem)EmotionTypeComboBox.SelectedItem).key + "\t" + ((ComboBoxItem)MessageTypeComboBox.SelectedItem).key + "\t" + Utils.replaceRichTextWriteOut(MessageTextBox.Text,flowLayoutPanel1) + "\t" + FailTalkIdTextBox.Text + "\t" + ((ComboBoxItem)NextTalkTypeComboBox.SelectedItem).key + "\t" + NextTalkIdTextBox.Text + "\t" + AnimationTextBox.Text + "\t";
 
             if (ConditionTreeView.Nodes[0].Nodes.Count > 0)
             {
@@ -457,10 +457,10 @@ namespace 侠之道mod制作器
                 }
 
                 //写文件
-                string savePath = MainForm.savePath + MainForm.modName + "\\" +DataManager.modTextFilePath + "\\Talk.txt";
+                string savePath = MainForm.savePath + MainForm.modName + "\\" +DataManager.modTextFilePath + "\\Talk_modify.txt";
                 if (!File.Exists(savePath))
                 {
-                    Directory.CreateDirectory(savePath);
+                    FileStream fs = File.Create(savePath);fs.Close();
                 }
                 string content = "";
                 using (StreamReader sr = new StreamReader(savePath))
@@ -506,7 +506,7 @@ namespace 侠之道mod制作器
 
                 
 
-                TalkTabControlUserControl TalkTabControlUserControl = (TalkTabControlUserControl)MainForm.userControls["Talk"];
+                
 
                 if (DataManager.allTalkLvis.ContainsKey(idTextBox.Text))
                 {
@@ -519,7 +519,11 @@ namespace 侠之道mod制作器
                 else
                 {
                     DataManager.allTalkLvis.Add(idTextBox.Text, lvi);
-                    TalkTabControlUserControl.getTalkListView().Items.Add(lvi);
+                    if (MainForm.userControls.ContainsKey("Talk"))
+                    {
+                        TalkTabControlUserControl TalkTabControlUserControl = (TalkTabControlUserControl)MainForm.userControls["Talk"];
+                        TalkTabControlUserControl.getTalkListView().Items.Add(lvi);
+                    }
                 }
 
             }

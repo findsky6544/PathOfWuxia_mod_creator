@@ -748,7 +748,6 @@ namespace 侠之道mod制作器
                 {
                     DataManager.dict["cinematic_cus"].Add(idTextBox.Text, cinematic);
                 }
-                CinematicTabControlUserControl cinematicTabControlUserControl = (CinematicTabControlUserControl)MainForm.userControls["cinematic"];
                 if (DataManager.allCinematicLvis.ContainsKey(idTextBox.Text))
                 {
                     ListViewItem oldLvi = DataManager.allCinematicLvis[idTextBox.Text];
@@ -760,7 +759,11 @@ namespace 侠之道mod制作器
                 else
                 {
                     DataManager.allCinematicLvis.Add(idTextBox.Text, lvi);
-                    cinematicTabControlUserControl.getCinematicListView().Items.Add(lvi);
+                    if (MainForm.userControls.ContainsKey("cinematic"))
+                    {
+                        CinematicTabControlUserControl cinematicTabControlUserControl = (CinematicTabControlUserControl)MainForm.userControls["cinematic"];
+                        cinematicTabControlUserControl.getCinematicListView().Items.Add(lvi);
+                    }
                 }
             }
             else
@@ -774,7 +777,6 @@ namespace 侠之道mod制作器
                 {
                     DataManager.dict["config/schedule_cus"].Add(idTextBox.Text, cinematic);
                 }
-                ConfigScheduleTabControlUserControl configScheduleTabControlUserControl = (ConfigScheduleTabControlUserControl)MainForm.userControls["config/schedule"];
                 if (DataManager.allConfigScheduleLvis.ContainsKey(idTextBox.Text))
                 {
                     ListViewItem oldLvi = DataManager.allConfigScheduleLvis[idTextBox.Text];
@@ -786,7 +788,11 @@ namespace 侠之道mod制作器
                 else
                 {
                     DataManager.allConfigScheduleLvis.Add(idTextBox.Text, lvi);
-                    configScheduleTabControlUserControl.getScheduleListView().Items.Add(lvi);
+                    if (MainForm.userControls.ContainsKey("config/schedule"))
+                    {
+                        ConfigScheduleTabControlUserControl configScheduleTabControlUserControl = (ConfigScheduleTabControlUserControl)MainForm.userControls["config/schedule"];
+                        configScheduleTabControlUserControl.getScheduleListView().Items.Add(lvi);
+                    }
                 }
             }
 

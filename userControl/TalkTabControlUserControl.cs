@@ -21,7 +21,7 @@ namespace 侠之道mod制作器
         public void refrashListView()
         {
             talkListView.Items.Clear();
-            talkListView.Items.AddRange(DataManager.allTalkLvis.Values.Where(x => (showOriginalTalkCheckBox.Checked || x.SubItems[4].Text == "1")).ToArray());
+            talkListView.Items.AddRange(DataManager.allTalkLvis.Values.Where(x => (showOriginalTalkCheckBox.Checked || x.SubItems[x.SubItems.Count - 1].Text == "1")).ToArray());
             if (talkListView.SelectedItems.Count > 0)
             {
                 talkListView.EnsureVisible(talkListView.SelectedItems[0].Index);
