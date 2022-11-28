@@ -247,6 +247,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FolderPicker.cs" />
     <Compile Include="form\AboutForm.cs">
       <SubType>Form</SubType>
     </Compile>

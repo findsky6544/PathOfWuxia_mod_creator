@@ -102,13 +102,19 @@ namespace 侠之道mod制作器
 
         private void loadModToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FolderBrowserDialog dialog = new FolderBrowserDialog();
-            dialog.Description = "请选择mod文件夹";
-            string[] pathArray;
-            if (dialog.ShowDialog() == DialogResult.OK)
+            var dialog = new FolderPicker();
+            dialog.InputPath = @"c:\windows\system32";
+            if (dialog.ShowDialog(this.Handle) == true)
             {
-                pathArray = dialog.SelectedPath.Split('\\');
-                savePath = dialog.SelectedPath.Substring(0, dialog.SelectedPath.LastIndexOf("\\")) + "\\";
+                /*}
+                FolderBrowserDialog dialog = new FolderBrowserDialog();
+                dialog.Description = "请选择mod文件夹";
+                string[] pathArray;
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {*/
+                string[] pathArray;
+                pathArray = dialog.ResultPath.Split('\\');
+                savePath = dialog.ResultPath.Substring(0, dialog.ResultPath.LastIndexOf("\\")) + "\\";
 
                 modName = pathArray[pathArray.Length - 1];
                 DataManager.dict.Clear();

@@ -871,7 +871,15 @@ namespace 侠之道mod制作器
                 ToolStripMenuItem tsmi = new ToolStripMenuItem("跳转至该节点");
                 tsmi.Click += JumpNodeToolStripMenuItem_Click;
                 contextMenuStrip1.Items.Add(tsmi);
-                contextMenuStrip1.Items.Add(new ToolStripSeparator());
+            }
+
+            if (contextMenuStrip1.Items.Count > 0)
+            {
+                e.Cancel = false;
+            }
+            else
+            {
+                e.Cancel = true;
             }
         }
 
