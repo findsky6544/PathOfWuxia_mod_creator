@@ -136,13 +136,7 @@ namespace 侠之道mod制作器
                 }
             }
 
-            TreeNode rootNode = LevelUpRewardsTreeView.Nodes.Add("根节点");
-            rootNode.Tag = "rootNode";
-            if (Mantra.LevelUpRewards != null)
-            {
-                Utils.readBaseFlowGraphTree(rootNode, (OutputNode)Mantra.LevelUpRewards.Output);
-            }
-            LevelUpRewardsTreeView.ExpandAll();
+            Utils.initFlowTreeView(Mantra.LevelUpRewards, LevelUpRewardsTreeView);
         }
 
         public ListView getAllCellsListView()
