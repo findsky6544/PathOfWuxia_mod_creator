@@ -440,7 +440,7 @@ namespace 侠之道mod制作器
             ListViewItem lvi = new ListViewItem();
             lvi.SubItems.Add("");
             lvi.SubItems.Add("");
-            lvi.Tag = "(-1,,0)";
+            lvi.Tag = "(-1,\"\",0)";
             CharacterInfoSkillForm form = new CharacterInfoSkillForm(lvi, true, this);
             if (form.ShowDialog() == DialogResult.OK)
             {

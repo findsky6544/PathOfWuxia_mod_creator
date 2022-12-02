@@ -44,11 +44,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(157, 9);
+            this.label1.Location = new System.Drawing.Point(118, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 12);
+            this.label1.Size = new System.Drawing.Size(245, 12);
             this.label1.TabIndex = 0;
-            this.label1.Text = "作者：寻宇 QQ:553942623";
+            this.label1.Text = "作者：寻宇 QQ:553942623 讨论群:858892169";
             // 
             // linkLabel1
             // 

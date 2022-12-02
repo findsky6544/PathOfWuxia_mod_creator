@@ -667,6 +667,7 @@ namespace 侠之道mod制作器
             this.selectAdjustmentButton.TabIndex = 44;
             this.selectAdjustmentButton.Text = "选择整备";
             this.selectAdjustmentButton.UseVisualStyleBackColor = true;
+            this.selectAdjustmentButton.Visible = false;
             this.selectAdjustmentButton.Click += new System.EventHandler(this.selectAdjustmentButton_Click);
             // 
             // selectFailQuestButton
@@ -705,6 +706,7 @@ namespace 侠之道mod制作器
             this.AdjustmentIdTextBox.Name = "AdjustmentIdTextBox";
             this.AdjustmentIdTextBox.Size = new System.Drawing.Size(162, 21);
             this.AdjustmentIdTextBox.TabIndex = 40;
+            this.AdjustmentIdTextBox.Visible = false;
             // 
             // label11
             // 
@@ -745,6 +747,7 @@ namespace 侠之道mod制作器
             this.label13.Size = new System.Drawing.Size(53, 12);
             this.label13.TabIndex = 39;
             this.label13.Text = "整备编号";
+            this.label13.Visible = false;
             // 
             // IsRepeatCheckBox
             // 
