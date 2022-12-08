@@ -100,13 +100,13 @@ namespace 侠之道mod制作器
             "SetPlayerMantraEXP"}, -1);
             System.Windows.Forms.ListViewItem listViewItem24 = new System.Windows.Forms.ListViewItem(new string[] {
             "玩家/習得技能",
-            "SetPlayerTalk"}, -1);
+            "SetPlayerSkill"}, -1);
             System.Windows.Forms.ListViewItem listViewItem25 = new System.Windows.Forms.ListViewItem(new string[] {
             "玩家/取代技能",
             "ReplacePlayerSkill"}, -1);
             System.Windows.Forms.ListViewItem listViewItem26 = new System.Windows.Forms.ListViewItem(new string[] {
             "玩家/技能經驗",
-            "SetPlayerTalkEXP"}, -1);
+            "SetPlayerSkillEXP"}, -1);
             System.Windows.Forms.ListViewItem listViewItem27 = new System.Windows.Forms.ListViewItem(new string[] {
             "玩家/習得特技",
             "SetPlayerSpecial"}, -1);
