@@ -405,7 +405,7 @@ namespace 侠之道mod制作器
             lvi.SubItems.Add("");
             lvi.SubItems.Add("");
             lvi.SubItems.Add("");
-            lvi.Tag = "(0,,,0)";
+            lvi.Tag = "(0,\"\",\"\",0)";
             MantraPropertyEffectForm form = new MantraPropertyEffectForm(lvi, true, this);
             if (form.ShowDialog() == DialogResult.OK)
             {

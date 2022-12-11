@@ -463,7 +463,7 @@ namespace 侠之道mod制作器
             ListViewItem lvi = new ListViewItem();
             lvi.SubItems.Add("");
             lvi.SubItems.Add("");
-            lvi.Tag = "(,,0)";
+            lvi.Tag = "(\"\",\"\",0)";
             NurturanceInfoRewardForm form = new NurturanceInfoRewardForm(lvi, true, this);
             if (form.ShowDialog() == DialogResult.OK)
             {
