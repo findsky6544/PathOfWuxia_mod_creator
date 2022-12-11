@@ -209,6 +209,13 @@ namespace 侠之道mod制作器
 
         private void addNewBufferEventButton_Click(object sender, EventArgs e)
         {
+
+            if (bufferNodeTreeView.SelectedNode == null)
+            {
+                MessageBox.Show("请选择要添加到的节点");
+                return;
+            }
+
             BufferEventNodeForm form = new BufferEventNodeForm(":", true, this);
             form.ShowDialog();
 
@@ -225,6 +232,12 @@ namespace 侠之道mod制作器
 
         private void deleteBufferNodeButton_Click(object sender, EventArgs e)
         {
+            TreeNode currentNode = bufferNodeTreeView.SelectedNode;
+            if (currentNode == null)
+            {
+                MessageBox.Show("请选择要删除的节点");
+                return;
+            }
             if (MessageBox.Show("确认删除吗？", "确认", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 bufferNodeTreeView.Nodes.Remove(bufferNodeTreeView.SelectedNode);
@@ -450,6 +463,11 @@ namespace 侠之道mod制作器
             {
 
                 TreeNode treeNode = bufferNodeTreeView.SelectedNode;
+                if (treeNode == null)
+                {
+                    MessageBox.Show("请选择要添加到的节点");
+                    return;
+                }
                 if (treeNode != null && treeNode.Tag != null)
                 {
                     string tag = treeNode.Tag.ToString().Split(':')[0];
