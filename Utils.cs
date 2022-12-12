@@ -157,7 +157,7 @@ namespace 侠之道mod制作器
             else if (bufferNode.GetType() == typeof(AuraPromoteAction))
             {
                 AuraPromoteAction auraPromoteAction = (AuraPromoteAction)bufferNode;
-                bufferStr = "距离 " + auraPromoteAction.Distance + " 内的 " + EnumData.GetDisplayName(auraPromoteAction.UnitFaction)
+                bufferStr += "距离 " + auraPromoteAction.Distance + " 内的 " + EnumData.GetDisplayName(auraPromoteAction.UnitFaction)
                     + (auraPromoteAction.Gender == Gender.All ? "" : " " + EnumData.GetDisplayName(auraPromoteAction.Gender))
                     + " 添加 " + DataManager.getBuffersName(auraPromoteAction.BuffId) + "" + (auraPromoteAction.HasSelf ? " 包含自身" : " 不包含自身");
             }
@@ -165,7 +165,7 @@ namespace 侠之道mod制作器
             else if (bufferNode.GetType() == typeof(SingleAuraPromoteAction))
             {
                 SingleAuraPromoteAction singleAuraPromoteAction = (SingleAuraPromoteAction)bufferNode;
-                bufferStr = "距离 " + singleAuraPromoteAction.Distance + " 内的 " + EnumData.GetDisplayName(singleAuraPromoteAction.UnitFaction)
+                bufferStr += "距离 " + singleAuraPromoteAction.Distance + " 内的 " + EnumData.GetDisplayName(singleAuraPromoteAction.UnitFaction)
                     + (singleAuraPromoteAction.Gender == Gender.All ? "" : " " + EnumData.GetDisplayName(singleAuraPromoteAction.Gender))
                     + " 添加 " + DataManager.getBuffersName(singleAuraPromoteAction.BuffId) + " " + (singleAuraPromoteAction.HasSelf ? "" : "不") + "包含自身";
             }
@@ -173,17 +173,20 @@ namespace 侠之道mod制作器
             else if (bufferNode.GetType() == typeof(BufferLiberatedStateAction))
             {
                 BufferLiberatedStateAction bufferLiberatedStateAction = (BufferLiberatedStateAction)bufferNode;
-                bufferStr += EnumData.GetDisplayName(bufferLiberatedStateAction.Staus);
                 if (bufferLiberatedStateAction.Staus >= BattleLiberatedState.Lock_HP_Percent && bufferLiberatedStateAction.Staus <= BattleLiberatedState.Lock_MP_Value)
                 {
-                    bufferStr += " " + bufferLiberatedStateAction.Value;
+                    bufferStr += EnumData.GetDisplayName(bufferLiberatedStateAction.Staus) + " " + bufferLiberatedStateAction.Value;
+                }
+                else
+                {
+                    bufferStr += (bufferLiberatedStateAction.Value > 0 ? "赋予" : "解除") + " " + EnumData.GetDisplayName(bufferLiberatedStateAction.Staus);
                 }
             }
             //赋予限制状态
             else if (bufferNode.GetType() == typeof(BufferRestrictedStateAction))
             {
                 BufferRestrictedStateAction bufferRestrictedStateAction = (BufferRestrictedStateAction)bufferNode;
-                bufferStr += EnumData.GetDisplayName(bufferRestrictedStateAction.State);
+                bufferStr += (bufferRestrictedStateAction.Value > 0 ? "赋予" : "解除") + " " + EnumData.GetDisplayName(bufferRestrictedStateAction.State);
             }
             //转换阵营
             else if (bufferNode.GetType() == typeof(ChanageFaction))
@@ -261,7 +264,7 @@ namespace 侠之道mod制作器
             else if (bufferNode.GetType() == typeof(AssignAuraPromoteAction))
             {
                 AssignAuraPromoteAction assignAuraPromoteAction = (AssignAuraPromoteAction)bufferNode;
-                bufferStr = "距离 " + DataManager.getUnitsName(assignAuraPromoteAction.UnitID) + " " + assignAuraPromoteAction.Distance + " 格内的 " + EnumData.GetDisplayName(assignAuraPromoteAction.UnitFaction)
+                bufferStr += "距离 " + DataManager.getUnitsName(assignAuraPromoteAction.UnitID) + " " + assignAuraPromoteAction.Distance + " 格内的 " + EnumData.GetDisplayName(assignAuraPromoteAction.UnitFaction)
                     + (assignAuraPromoteAction.Gender == Gender.All ? "" : " " + EnumData.GetDisplayName(assignAuraPromoteAction.Gender))
                     + " 添加 " + DataManager.getBuffersName(assignAuraPromoteAction.BuffId) + (assignAuraPromoteAction.HasSelf ? " 包含自身" : " 不包含自身");
             }
@@ -429,7 +432,7 @@ namespace 侠之道mod制作器
                 else if (bufferNode.GetType() == typeof(SelfBufferOrientedCondition))
                 {
                     SelfBufferOrientedCondition selfBufferOrientedCondition = (SelfBufferOrientedCondition)bufferNode;
-                    bufferStr = discriptionArray[discriptionArray.Length - 1] + ":" + "持有 " + EnumData.GetDisplayName(selfBufferOrientedCondition.oriented) + " buff";
+                    bufferStr += discriptionArray[discriptionArray.Length - 1] + ":" + "持有 " + EnumData.GetDisplayName(selfBufferOrientedCondition.oriented) + " buff";
                 }
                 //判断自身持有特定BUFF
                 else if (bufferNode.GetType() == typeof(IsHasBufferCondition))
@@ -596,18 +599,18 @@ namespace 侠之道mod制作器
                 //移动距离提升属性
                 if (bufferNode.GetType() == typeof(BufferMovePromoteAction))
                 {
-                    bufferStr = "每1移动距离 " + bufferStr;
+                    bufferStr += "每1移动距离 " + bufferStr;
                 }
                 //回合数提升属性
                 else if (bufferNode.GetType() == typeof(BufferTurnPromoteAction))
                 {
-                    bufferStr = "每1回合 " + bufferStr;
+                    bufferStr += "每1回合 " + bufferStr;
                 }
                 //部队数提升属性
                 else if (bufferNode.GetType() == typeof(BufferUnitPromoteAction))
                 {
                     BufferUnitPromoteAction bufferUnitPromoteAction = (BufferUnitPromoteAction)bufferNode;
-                    bufferStr = "距离 " + bufferUnitPromoteAction.Distance + " 格内每有1个 " + EnumData.GetDisplayName(bufferUnitPromoteAction.UnitFaction)
+                    bufferStr += "距离 " + bufferUnitPromoteAction.Distance + " 格内每有1个 " + EnumData.GetDisplayName(bufferUnitPromoteAction.UnitFaction)
                         + (bufferUnitPromoteAction.Gender == Gender.All ? "" : " " + EnumData.GetDisplayName(bufferUnitPromoteAction.Gender))
                         + ", " + bufferStr;
                 }
@@ -615,25 +618,25 @@ namespace 侠之道mod制作器
                 else if (bufferNode.GetType() == typeof(BufferNumberOfBattleActionsPromoteAction))
                 {
                     BufferNumberOfBattleActionsPromoteAction bufferNumberOfBattleActionsPromoteAction = (BufferNumberOfBattleActionsPromoteAction)bufferNode;
-                    bufferStr = "每1" + EnumData.GetDisplayName(bufferNumberOfBattleActionsPromoteAction.actions) + " " + bufferStr;
+                    bufferStr += "每1" + EnumData.GetDisplayName(bufferNumberOfBattleActionsPromoteAction.actions) + " " + bufferStr;
                 }
                 //正面状态重数提升属性
                 else if (bufferNode.GetType() == typeof(BufferPositiveStatePromoteAction))
                 {
                     BufferPositiveStatePromoteAction bufferPositiveStatePromoteAction = (BufferPositiveStatePromoteAction)bufferNode;
-                    bufferStr = "每有1重 " + EnumData.GetDisplayName(bufferPositiveStatePromoteAction.Staus) + " " + bufferStr;
+                    bufferStr += "每有1重 " + EnumData.GetDisplayName(bufferPositiveStatePromoteAction.Staus) + " " + bufferStr;
                 }
                 //负面状态重数提升属性
                 else if (bufferNode.GetType() == typeof(BufferNegativeStatePromoteAction))
                 {
                     BufferNegativeStatePromoteAction bufferNegativeStatePromoteAction = (BufferNegativeStatePromoteAction)bufferNode;
-                    bufferStr = "每有1重 " + EnumData.GetDisplayName(bufferNegativeStatePromoteAction.Staus) + " " + bufferStr;
+                    bufferStr += "每有1重 " + EnumData.GetDisplayName(bufferNegativeStatePromoteAction.Staus) + " " + bufferStr;
                 }
                 //攻击距离提升属性
                 else if (bufferNode.GetType() == typeof(BufferDistancePromoteAction))
                 {
                     BufferDistancePromoteAction bufferDistancePromoteAction = (BufferDistancePromoteAction)bufferNode;
-                    bufferStr = "超过 " + bufferDistancePromoteAction.MinDis + " 格每1格" + " " + bufferStr;
+                    bufferStr += "超过 " + bufferDistancePromoteAction.MinDis + " 格每1格" + " " + bufferStr;
                 }
                 //攻击者剩馀移动数提升属性
                 else if (bufferNode.GetType() == typeof(NumberOfMovementsPromoteAction))
@@ -644,7 +647,7 @@ namespace 侠之道mod制作器
                 else if (bufferNode.GetType() == typeof(BufferOverlayPromoteAction))
                 {
                     BufferOverlayPromoteAction bufferOverlayPromoteAction = (BufferOverlayPromoteAction)bufferNode;
-                    bufferStr = (bufferOverlayPromoteAction.isTarget ? "目标" : "自身") + " 每有1重 " + DataManager.getBuffersName(bufferOverlayPromoteAction.bufferid) + " " + bufferStr;
+                    bufferStr += (bufferOverlayPromoteAction.isTarget ? "目标" : "自身") + " 每有1重 " + DataManager.getBuffersName(bufferOverlayPromoteAction.bufferid) + " " + bufferStr;
                 }
                 else
                 {
@@ -656,7 +659,7 @@ namespace 侠之道mod制作器
             else if (bufferNode.GetType().IsSubclassOf(typeof(PercentPromoteAction)))
             {
                 PercentPromoteAction percentPromoteAction = (PercentPromoteAction)bufferNode;
-                bufferStr = "相较 " + percentPromoteAction.Percent + "% 每 " + EnumData.GetDisplayName(percentPromoteAction.Op) + " " + +percentPromoteAction.PercentGap + "%, "
+                bufferStr += "相较 " + percentPromoteAction.Percent + "% 每 " + EnumData.GetDisplayName(percentPromoteAction.Op) + " " + +percentPromoteAction.PercentGap + "%, "
                     + EnumData.GetDisplayName(percentPromoteAction.Property) + " 提升 " + percentPromoteAction.Value;
             }
             else

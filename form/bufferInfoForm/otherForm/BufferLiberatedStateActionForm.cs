@@ -1,4 +1,5 @@
 ﻿using Heluo.Battle;
+using Heluo.Flow.Battle;
 using System;
 using System.Windows.Forms;
 
@@ -80,13 +81,17 @@ namespace 侠之道mod制作器
 
 
 
-            currentNode.Text = "赋予解放状态:" + StausComboBox.Text;
+            currentNode.Text = "赋予解放状态:";
 
             BattleLiberatedState battleLiberatedState = (BattleLiberatedState)Enum.Parse(typeof(BattleLiberatedState), ((ComboBoxItem)StausComboBox.SelectedItem).key);
 
             if (battleLiberatedState >= BattleLiberatedState.Lock_HP_Percent && battleLiberatedState <= BattleLiberatedState.Lock_MP_Value)
             {
-                currentNode.Text += " " + valueNumericUpDown.Value;
+                currentNode.Text += StausComboBox.Text + " " + valueNumericUpDown.Value;
+            }
+            else
+            {
+                currentNode.Text += (valueNumericUpDown.Value > 0 ? "赋予" : "解除") + " " + StausComboBox.Text;
             }
             Close();
         }
@@ -98,7 +103,7 @@ namespace 侠之道mod制作器
 
         private void StausComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            BattleLiberatedState battleLiberatedState = (BattleLiberatedState)Enum.Parse(typeof(BattleLiberatedState), ((ComboBoxItem)StausComboBox.SelectedItem).key);
+            /*BattleLiberatedState battleLiberatedState = (BattleLiberatedState)Enum.Parse(typeof(BattleLiberatedState), ((ComboBoxItem)StausComboBox.SelectedItem).key);
 
             if (battleLiberatedState >= BattleLiberatedState.Lock_HP_Percent && battleLiberatedState <= BattleLiberatedState.Lock_MP_Value)
             {
@@ -109,7 +114,7 @@ namespace 侠之道mod制作器
             {
                 label3.Visible = false;
                 valueNumericUpDown.Visible = false;
-            }
+            }*/
         }
     }
 }

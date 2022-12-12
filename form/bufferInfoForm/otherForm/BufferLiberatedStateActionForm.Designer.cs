@@ -84,7 +84,6 @@ namespace 侠之道mod制作器
             this.label3.Size = new System.Drawing.Size(17, 12);
             this.label3.TabIndex = 10;
             this.label3.Text = "值";
-            this.label3.Visible = false;
             // 
             // valueNumericUpDown
             // 
@@ -102,7 +101,6 @@ namespace 侠之道mod制作器
             0,
             0,
             0});
-            this.valueNumericUpDown.Visible = false;
             // 
             // BufferLiberatedStateActionForm
             // 
