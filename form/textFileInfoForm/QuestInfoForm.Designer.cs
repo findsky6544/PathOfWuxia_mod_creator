@@ -29,242 +29,242 @@ namespace 侠之道mod制作器
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem79 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查完成任務數量",
             "CheckCompleteQuestCount"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem80 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查當前回合",
             "CheckCurrentRound"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem81 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查當前階段",
             "CheckCurrentStage"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem82 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查當前時間",
             "CheckCurrentTime"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem83 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查當前天氣",
             "CheckCurrentWeather"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem84 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查玩家疲勞值",
             "CheckEmotion"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem85 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 NPC 是否是摯友",
             "CheckFavorabilityBestFriend"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem86 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 NPC 是否可升階\t",
             "CheckFavorabilityCacRankUp"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem87 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 NPC 是否是戀人",
             "CheckFavorabilityIsLover"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem88 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 NPC 好感階段",
             "CheckFavorabilityRank"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem89 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查旗標",
             "CheckFlag"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem90 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查當前地圖編號",
             "CheckMapId"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem91 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查金錢",
             "CheckMoney"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem92 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 NPC 心法",
             "CheckNpcMantra"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem93 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 NPC 心法等級",
             "CheckNpcMantraLevel"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem94 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 NPC 次級屬性",
             "CheckNpcProperty"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem17 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem95 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 NPC 技能",
             "CheckNpcSkill"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem18 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem96 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 NPC 技能等級",
             "CheckNpcSkillLevel"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem19 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem97 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 NPC 特質",
             "CheckNpcTrait"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem20 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem98 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 NPC 升級屬性",
             "CheckNpcUpgradableProperty"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem21 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem99 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查當前養成待機編號",
             "CheckNurturanceIdleId"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem22 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem100 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查玩家性別",
             "CheckPlayerGender"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem23 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem101 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 Player 十階武學與心法總數",
             "CheckPlayerLevelMaxMantrasAndSkills"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem24 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem102 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 Player 心法",
             "CheckPlayerMantra"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem25 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem103 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 Player 心法等級",
             "CheckPlayerMantraLevel"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem26 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem104 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 Player 次級屬性",
             "CheckPlayerProperty"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem27 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem105 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 Player 技能",
             "CheckPlayerSkill"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem28 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem106 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 Player 技能等級",
             "CheckPlayerSkillLevel"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem29 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem107 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 Player 四藝總和",
             "CheckPlayerTotalArtProperty"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem30 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem108 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 Player 四軸總和",
             "CheckPlayerTotalPersonalityProperty"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem31 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem109 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 Player 技能類型總和",
             "CheckPlayerTotalSkillLevel"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem32 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem110 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 Player 四維總和",
             "CheckPlayerTotalUpgradableProperty"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem33 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem111 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 Player 特質",
             "CheckPlayerTrait"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem34 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem112 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 Player 升級屬性",
             "CheckPlayerUpgradableProperty"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem35 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem113 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查任務狀態",
             "CheckQuestState"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem36 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem114 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查玩家武器種類",
             "CheckWeapon"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem37 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem115 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查目前輸入裝置",
             "InputTypeCondition"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem38 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem116 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 Player 背包",
             "PlayerInventoryCondition"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem39 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem117 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查隊友是否在隊",
             "TeammateCondition"}, -1);
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("根节点");
-            System.Windows.Forms.ListViewItem listViewItem40 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("根节点");
+            System.Windows.Forms.ListViewItem listViewItem118 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查完成任務數量",
             "CheckCompleteQuestCount"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem41 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem119 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查當前回合",
             "CheckCurrentRound"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem42 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem120 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查當前階段",
             "CheckCurrentStage"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem43 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem121 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查當前時間",
             "CheckCurrentTime"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem44 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem122 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查當前天氣",
             "CheckCurrentWeather"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem45 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem123 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查玩家疲勞值",
             "CheckEmotion"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem46 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem124 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 NPC 是否是摯友",
             "CheckFavorabilityBestFriend"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem47 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem125 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 NPC 是否可升階\t",
             "CheckFavorabilityCacRankUp"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem48 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem126 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 NPC 是否是戀人",
             "CheckFavorabilityIsLover"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem49 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem127 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 NPC 好感階段",
             "CheckFavorabilityRank"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem50 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem128 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查旗標",
             "CheckFlag"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem51 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem129 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查當前地圖編號",
             "CheckMapId"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem52 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem130 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查金錢",
             "CheckMoney"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem53 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem131 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 NPC 心法",
             "CheckNpcMantra"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem54 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem132 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 NPC 心法等級",
             "CheckNpcMantraLevel"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem55 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem133 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 NPC 次級屬性",
             "CheckNpcProperty"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem56 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem134 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 NPC 技能",
             "CheckNpcSkill"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem57 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem135 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 NPC 技能等級",
             "CheckNpcSkillLevel"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem58 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem136 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 NPC 特質",
             "CheckNpcTrait"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem59 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem137 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 NPC 升級屬性",
             "CheckNpcUpgradableProperty"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem60 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem138 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查當前養成待機編號",
             "CheckNurturanceIdleId"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem61 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem139 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查玩家性別",
             "CheckPlayerGender"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem62 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem140 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 Player 十階武學與心法總數",
             "CheckPlayerLevelMaxMantrasAndSkills"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem63 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem141 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 Player 心法",
             "CheckPlayerMantra"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem64 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem142 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 Player 心法等級",
             "CheckPlayerMantraLevel"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem65 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem143 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 Player 次級屬性",
             "CheckPlayerProperty"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem66 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem144 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 Player 技能",
             "CheckPlayerSkill"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem67 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem145 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 Player 技能等級",
             "CheckPlayerSkillLevel"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem68 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem146 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 Player 四藝總和",
             "CheckPlayerTotalArtProperty"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem69 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem147 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 Player 四軸總和",
             "CheckPlayerTotalPersonalityProperty"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem70 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem148 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 Player 技能類型總和",
             "CheckPlayerTotalSkillLevel"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem71 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem149 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 Player 四維總和",
             "CheckPlayerTotalUpgradableProperty"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem72 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem150 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 Player 特質",
             "CheckPlayerTrait"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem73 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem151 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 Player 升級屬性",
             "CheckPlayerUpgradableProperty"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem74 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem152 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查任務狀態",
             "CheckQuestState"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem75 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem153 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查玩家武器種類",
             "CheckWeapon"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem76 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem154 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查目前輸入裝置",
             "InputTypeCondition"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem77 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem155 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 Player 背包",
             "PlayerInventoryCondition"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem78 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem156 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查隊友是否在隊",
             "TeammateCondition"}, -1);
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("根节点");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("根节点");
             this.idLabel = new System.Windows.Forms.Label();
             this.idTextBox = new System.Windows.Forms.TextBox();
             this.NameTextBox = new System.Windows.Forms.TextBox();
@@ -288,16 +288,13 @@ namespace 侠之道mod制作器
             this.ShowConditionEditNodeButton = new System.Windows.Forms.Button();
             this.ShowConditionDeleteNodeButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.selectAdjustmentButton = new System.Windows.Forms.Button();
             this.selectFailQuestButton = new System.Windows.Forms.Button();
             this.selectNextQuestButton = new System.Windows.Forms.Button();
             this.selectNpcButton = new System.Windows.Forms.Button();
-            this.AdjustmentIdTextBox = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.NextQuestIdTextBox = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.FailQuestIdTextBox = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.IsRepeatCheckBox = new System.Windows.Forms.CheckBox();
             this.ScheduleComboBox = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -336,6 +333,7 @@ namespace 侠之道mod制作器
             this.editRewardButton = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
             this.saveButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -474,45 +472,45 @@ namespace 侠之道mod制作器
             this.ShowConditionNodeListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.ShowConditionNodeListView.HideSelection = false;
             this.ShowConditionNodeListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3,
-            listViewItem4,
-            listViewItem5,
-            listViewItem6,
-            listViewItem7,
-            listViewItem8,
-            listViewItem9,
-            listViewItem10,
-            listViewItem11,
-            listViewItem12,
-            listViewItem13,
-            listViewItem14,
-            listViewItem15,
-            listViewItem16,
-            listViewItem17,
-            listViewItem18,
-            listViewItem19,
-            listViewItem20,
-            listViewItem21,
-            listViewItem22,
-            listViewItem23,
-            listViewItem24,
-            listViewItem25,
-            listViewItem26,
-            listViewItem27,
-            listViewItem28,
-            listViewItem29,
-            listViewItem30,
-            listViewItem31,
-            listViewItem32,
-            listViewItem33,
-            listViewItem34,
-            listViewItem35,
-            listViewItem36,
-            listViewItem37,
-            listViewItem38,
-            listViewItem39});
+            listViewItem79,
+            listViewItem80,
+            listViewItem81,
+            listViewItem82,
+            listViewItem83,
+            listViewItem84,
+            listViewItem85,
+            listViewItem86,
+            listViewItem87,
+            listViewItem88,
+            listViewItem89,
+            listViewItem90,
+            listViewItem91,
+            listViewItem92,
+            listViewItem93,
+            listViewItem94,
+            listViewItem95,
+            listViewItem96,
+            listViewItem97,
+            listViewItem98,
+            listViewItem99,
+            listViewItem100,
+            listViewItem101,
+            listViewItem102,
+            listViewItem103,
+            listViewItem104,
+            listViewItem105,
+            listViewItem106,
+            listViewItem107,
+            listViewItem108,
+            listViewItem109,
+            listViewItem110,
+            listViewItem111,
+            listViewItem112,
+            listViewItem113,
+            listViewItem114,
+            listViewItem115,
+            listViewItem116,
+            listViewItem117});
             this.ShowConditionNodeListView.Location = new System.Drawing.Point(0, 33);
             this.ShowConditionNodeListView.MultiSelect = false;
             this.ShowConditionNodeListView.Name = "ShowConditionNodeListView";
@@ -570,11 +568,11 @@ namespace 侠之道mod制作器
             this.ShowConditionTreeView.HideSelection = false;
             this.ShowConditionTreeView.Location = new System.Drawing.Point(0, 33);
             this.ShowConditionTreeView.Name = "ShowConditionTreeView";
-            treeNode1.Name = "节点0";
-            treeNode1.Tag = "rootNode";
-            treeNode1.Text = "根节点";
+            treeNode3.Name = "节点0";
+            treeNode3.Tag = "rootNode";
+            treeNode3.Text = "根节点";
             this.ShowConditionTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1});
+            treeNode3});
             this.ShowConditionTreeView.ShowNodeToolTips = true;
             this.ShowConditionTreeView.Size = new System.Drawing.Size(699, 330);
             this.ShowConditionTreeView.TabIndex = 12;
@@ -623,16 +621,14 @@ namespace 侠之道mod制作器
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.selectAdjustmentButton);
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.selectFailQuestButton);
             this.panel1.Controls.Add(this.selectNextQuestButton);
             this.panel1.Controls.Add(this.selectNpcButton);
-            this.panel1.Controls.Add(this.AdjustmentIdTextBox);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.NextQuestIdTextBox);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.FailQuestIdTextBox);
-            this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.IsRepeatCheckBox);
             this.panel1.Controls.Add(this.ScheduleComboBox);
             this.panel1.Controls.Add(this.label8);
@@ -658,17 +654,6 @@ namespace 侠之道mod制作器
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1067, 181);
             this.panel1.TabIndex = 20;
-            // 
-            // selectAdjustmentButton
-            // 
-            this.selectAdjustmentButton.Location = new System.Drawing.Point(936, 69);
-            this.selectAdjustmentButton.Name = "selectAdjustmentButton";
-            this.selectAdjustmentButton.Size = new System.Drawing.Size(96, 23);
-            this.selectAdjustmentButton.TabIndex = 44;
-            this.selectAdjustmentButton.Text = "选择整备";
-            this.selectAdjustmentButton.UseVisualStyleBackColor = true;
-            this.selectAdjustmentButton.Visible = false;
-            this.selectAdjustmentButton.Click += new System.EventHandler(this.selectAdjustmentButton_Click);
             // 
             // selectFailQuestButton
             // 
@@ -700,14 +685,6 @@ namespace 侠之道mod制作器
             this.selectNpcButton.UseVisualStyleBackColor = true;
             this.selectNpcButton.Click += new System.EventHandler(this.selectNpcButton_Click);
             // 
-            // AdjustmentIdTextBox
-            // 
-            this.AdjustmentIdTextBox.Location = new System.Drawing.Point(768, 71);
-            this.AdjustmentIdTextBox.Name = "AdjustmentIdTextBox";
-            this.AdjustmentIdTextBox.Size = new System.Drawing.Size(162, 21);
-            this.AdjustmentIdTextBox.TabIndex = 40;
-            this.AdjustmentIdTextBox.Visible = false;
-            // 
             // label11
             // 
             this.label11.Location = new System.Drawing.Point(3, 74);
@@ -738,16 +715,6 @@ namespace 侠之道mod制作器
             this.FailQuestIdTextBox.Name = "FailQuestIdTextBox";
             this.FailQuestIdTextBox.Size = new System.Drawing.Size(162, 21);
             this.FailQuestIdTextBox.TabIndex = 37;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(714, 75);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(53, 12);
-            this.label13.TabIndex = 39;
-            this.label13.Text = "整备编号";
-            this.label13.Visible = false;
             // 
             // IsRepeatCheckBox
             // 
@@ -907,45 +874,45 @@ namespace 侠之道mod制作器
             this.PickUpConditionNodeListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.PickUpConditionNodeListView.HideSelection = false;
             this.PickUpConditionNodeListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem40,
-            listViewItem41,
-            listViewItem42,
-            listViewItem43,
-            listViewItem44,
-            listViewItem45,
-            listViewItem46,
-            listViewItem47,
-            listViewItem48,
-            listViewItem49,
-            listViewItem50,
-            listViewItem51,
-            listViewItem52,
-            listViewItem53,
-            listViewItem54,
-            listViewItem55,
-            listViewItem56,
-            listViewItem57,
-            listViewItem58,
-            listViewItem59,
-            listViewItem60,
-            listViewItem61,
-            listViewItem62,
-            listViewItem63,
-            listViewItem64,
-            listViewItem65,
-            listViewItem66,
-            listViewItem67,
-            listViewItem68,
-            listViewItem69,
-            listViewItem70,
-            listViewItem71,
-            listViewItem72,
-            listViewItem73,
-            listViewItem74,
-            listViewItem75,
-            listViewItem76,
-            listViewItem77,
-            listViewItem78});
+            listViewItem118,
+            listViewItem119,
+            listViewItem120,
+            listViewItem121,
+            listViewItem122,
+            listViewItem123,
+            listViewItem124,
+            listViewItem125,
+            listViewItem126,
+            listViewItem127,
+            listViewItem128,
+            listViewItem129,
+            listViewItem130,
+            listViewItem131,
+            listViewItem132,
+            listViewItem133,
+            listViewItem134,
+            listViewItem135,
+            listViewItem136,
+            listViewItem137,
+            listViewItem138,
+            listViewItem139,
+            listViewItem140,
+            listViewItem141,
+            listViewItem142,
+            listViewItem143,
+            listViewItem144,
+            listViewItem145,
+            listViewItem146,
+            listViewItem147,
+            listViewItem148,
+            listViewItem149,
+            listViewItem150,
+            listViewItem151,
+            listViewItem152,
+            listViewItem153,
+            listViewItem154,
+            listViewItem155,
+            listViewItem156});
             this.PickUpConditionNodeListView.Location = new System.Drawing.Point(0, 33);
             this.PickUpConditionNodeListView.MultiSelect = false;
             this.PickUpConditionNodeListView.Name = "PickUpConditionNodeListView";
@@ -1003,11 +970,11 @@ namespace 侠之道mod制作器
             this.PickUpConditionTreeView.HideSelection = false;
             this.PickUpConditionTreeView.Location = new System.Drawing.Point(0, 33);
             this.PickUpConditionTreeView.Name = "PickUpConditionTreeView";
-            treeNode2.Name = "节点0";
-            treeNode2.Tag = "rootNode";
-            treeNode2.Text = "根节点";
+            treeNode4.Name = "节点0";
+            treeNode4.Tag = "rootNode";
+            treeNode4.Text = "根节点";
             this.PickUpConditionTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode2});
+            treeNode4});
             this.PickUpConditionTreeView.ShowNodeToolTips = true;
             this.PickUpConditionTreeView.Size = new System.Drawing.Size(699, 295);
             this.PickUpConditionTreeView.TabIndex = 12;
@@ -1166,6 +1133,17 @@ namespace 侠之道mod制作器
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(744, 42);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(96, 23);
+            this.button1.TabIndex = 45;
+            this.button1.Text = "查看调用排程";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // QuestInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1262,23 +1240,21 @@ namespace 侠之道mod制作器
         private System.Windows.Forms.ColumnHeader columnHeader5;
         public System.Windows.Forms.Panel panel9;
         public System.Windows.Forms.Button editRewardButton;
-        public System.Windows.Forms.TextBox AdjustmentIdTextBox;
         public System.Windows.Forms.Label label11;
         public System.Windows.Forms.TextBox NextQuestIdTextBox;
         public System.Windows.Forms.Label label12;
         public System.Windows.Forms.TextBox FailQuestIdTextBox;
-        public System.Windows.Forms.Label label13;
         public System.Windows.Forms.Button selectNpcButton;
         public System.Windows.Forms.Button ShowConditionAddLogicalNodeButton;
         public System.Windows.Forms.Button PickUpConditionAddLogicalNodeButton;
         private System.Windows.Forms.Panel panel10;
         public System.Windows.Forms.TextBox PickUpConditionDescriptionTextBox;
         public System.Windows.Forms.Label label14;
-        public System.Windows.Forms.Button selectAdjustmentButton;
         public System.Windows.Forms.Button selectFailQuestButton;
         public System.Windows.Forms.Button selectNextQuestButton;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.Panel panel11;
         public System.Windows.Forms.Button saveButton;
+        public System.Windows.Forms.Button button1;
     }
 }

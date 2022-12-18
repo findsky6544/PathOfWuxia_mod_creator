@@ -156,6 +156,11 @@ namespace 侠之道mod制作器
             2,
             0,
             0});
+            this.PercentGapNumericUpDown.Minimum = new decimal(new int[] {
+            1410065407,
+            2,
+            0,
+            -2147483648});
             this.PercentGapNumericUpDown.Name = "PercentGapNumericUpDown";
             this.PercentGapNumericUpDown.Size = new System.Drawing.Size(120, 21);
             this.PercentGapNumericUpDown.TabIndex = 35;

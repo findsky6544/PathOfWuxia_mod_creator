@@ -117,9 +117,6 @@ namespace 侠之道mod制作器
                 IsRepeatCheckBox.Checked = quest.IsRepeat;
                 NextQuestIdTextBox.Text = quest.NextQuestId;
                 FailQuestIdTextBox.Text = quest.FailQuestId;
-                AdjustmentIdTextBox.Text = quest.AdjustmentId;
-
-
             }
 
         }
@@ -209,7 +206,7 @@ namespace 侠之道mod制作器
                 {
                     content = "\r\n" + sr.ReadToEnd() + "\r\n";
                 }
-                string replacement = idTextBox.Text + "\t" + NameTextBox.Text + "\t" + ConsignorIdTextBox.Text + "\t" + RemarkTextBox.Text + "\t" + ((ComboBoxItem)TypeComboBox.SelectedItem).key + "\t" + BriefTextBox.Text + "\t" + DescriptionTextBox.Text + "\t" + NextQuestIdTextBox.Text + "\t" + FailQuestIdTextBox.Text + "\t" + AdjustmentIdTextBox.Text + "\t" + IsShowHintCheckBox.Checked + "\t";
+                string replacement = idTextBox.Text + "\t" + NameTextBox.Text + "\t" + ConsignorIdTextBox.Text + "\t" + RemarkTextBox.Text + "\t" + ((ComboBoxItem)TypeComboBox.SelectedItem).key + "\t" + BriefTextBox.Text + "\t" + DescriptionTextBox.Text + "\t" + NextQuestIdTextBox.Text + "\t" + FailQuestIdTextBox.Text + "\t" + "\t" + IsShowHintCheckBox.Checked + "\t";
 
                 if (ShowConditionTreeView.Nodes[0].Nodes.Count > 0)
                 {
@@ -316,12 +313,6 @@ namespace 侠之道mod制作器
             form.ShowDialog();
         }
 
-        private void selectAdjustmentButton_Click(object sender, EventArgs e)
-        {
-            SelectAdjustmentForm form = new SelectAdjustmentForm(this, AdjustmentIdTextBox, false);
-            form.ShowDialog();
-        }
-
         private void editRewardButton_Click(object sender, EventArgs e)
         {
             if (EvaluationRewardListView.SelectedItems.Count > 0)
@@ -329,6 +320,12 @@ namespace 侠之道mod制作器
                 EvaluationLevelForm form = new EvaluationLevelForm(EvaluationRewardListView.SelectedItems[0], false, this);
                 form.ShowDialog();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CinematicInfoForm form = new CinematicInfoForm("cinematic",idTextBox.Text.Replace('q','m'),true);
+            form.Show();
         }
     }
 

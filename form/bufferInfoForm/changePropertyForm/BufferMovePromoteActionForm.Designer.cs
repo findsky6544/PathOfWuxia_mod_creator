@@ -137,6 +137,11 @@ namespace 侠之道mod制作器
             2,
             0,
             0});
+            this.valueLimitNumericUpDown.Minimum = new decimal(new int[] {
+            1410065407,
+            2,
+            0,
+            -2147483648});
             this.valueLimitNumericUpDown.Name = "valueLimitNumericUpDown";
             this.valueLimitNumericUpDown.Size = new System.Drawing.Size(120, 21);
             this.valueLimitNumericUpDown.TabIndex = 21;
@@ -155,6 +160,11 @@ namespace 侠之道mod制作器
             2,
             0,
             0});
+            this.valueNumericUpDown.Minimum = new decimal(new int[] {
+            1410065407,
+            2,
+            0,
+            -2147483648});
             this.valueNumericUpDown.Name = "valueNumericUpDown";
             this.valueNumericUpDown.Size = new System.Drawing.Size(120, 21);
             this.valueNumericUpDown.TabIndex = 20;

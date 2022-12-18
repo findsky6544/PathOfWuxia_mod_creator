@@ -111,11 +111,6 @@ namespace 侠之道mod制作器
                 MessageBox.Show("请输入切换到哪个阶段");
                 return;
             }
-            if (orderMusicTextBox.Text == "")
-            {
-                MessageBox.Show("请输入指定音乐");
-                return;
-            }
             if (orderVolumeNumericUpDown.Text == "")
             {
                 MessageBox.Show("请输入指定音乐音量");
