@@ -136,7 +136,7 @@ namespace 侠之道mod制作器
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "侠之道mod制作工具1.0.10";
+            this.Text = "侠之道mod制作工具1.0.11";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);

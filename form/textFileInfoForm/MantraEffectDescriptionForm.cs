@@ -8,16 +8,18 @@ namespace 侠之道mod制作器
     {
         public bool isAdd;
         public ListViewItem lvi;
+        public string type;
         public MantraEffectDescriptionForm()
         {
             InitializeComponent();
         }
-        public MantraEffectDescriptionForm(ListViewItem lvi, bool isAdd, Form owner) : this()
+        public MantraEffectDescriptionForm(ListViewItem lvi, bool isAdd, Form owner,string type) : this()
         {
             this.lvi = lvi;
             this.isAdd = isAdd;
             Owner = owner;
             Text = owner.Text + Text;
+            this.type = type;
 
             string fields = "";
             fields = lvi.Tag.ToString();
@@ -43,7 +45,11 @@ namespace 侠之道mod制作器
                 MessageBox.Show("请输入内功效果叙述");
                 return;
             }
-
+            if(type == "RunEffectDescription" && !EffectDescriptionTextBox.Text.Contains("："))
+            {
+                MessageBox.Show("内功效果叙述需包含一个中文冒号");
+                return;
+            }
 
             lvi.Tag = "(" + MartraLevelNumericUpDown.Text + ", " + EffectDescriptionTextBox.Text + ")";
             lvi.Text = MartraLevelNumericUpDown.Text;

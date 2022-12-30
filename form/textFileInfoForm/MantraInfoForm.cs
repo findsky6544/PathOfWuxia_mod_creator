@@ -340,7 +340,7 @@ namespace 侠之道mod制作器
             ListViewItem lvi = new ListViewItem();
             lvi.SubItems.Add("");
             lvi.Tag = "(0,)";
-            MantraEffectDescriptionForm form = new MantraEffectDescriptionForm(lvi, true, this);
+            MantraEffectDescriptionForm form = new MantraEffectDescriptionForm(lvi, true, this, "RunEffectDescription");
             if (form.ShowDialog() == DialogResult.OK)
             {
                 MantraRunEffectDescriptionsListView.Items.Add(lvi);
@@ -351,7 +351,7 @@ namespace 侠之道mod制作器
         {
             if (MantraRunEffectDescriptionsListView.SelectedItems.Count > 0)
             {
-                MantraEffectDescriptionForm form = new MantraEffectDescriptionForm(MantraRunEffectDescriptionsListView.SelectedItems[0], false, this);
+                MantraEffectDescriptionForm form = new MantraEffectDescriptionForm(MantraRunEffectDescriptionsListView.SelectedItems[0], false, this, "RunEffectDescription");
                 form.ShowDialog();
             }
         }
@@ -372,7 +372,7 @@ namespace 侠之道mod制作器
             ListViewItem lvi = new ListViewItem();
             lvi.SubItems.Add("");
             lvi.Tag = "(0,)";
-            MantraEffectDescriptionForm form = new MantraEffectDescriptionForm(lvi, true, this);
+            MantraEffectDescriptionForm form = new MantraEffectDescriptionForm(lvi, true, this, "PracticeEffectDescription");
             if (form.ShowDialog() == DialogResult.OK)
             {
                 MantraPracticeEffectDescriptionsListView.Items.Add(lvi);
@@ -383,7 +383,7 @@ namespace 侠之道mod制作器
         {
             if (MantraPracticeEffectDescriptionsListView.SelectedItems.Count > 0)
             {
-                MantraEffectDescriptionForm form = new MantraEffectDescriptionForm(MantraPracticeEffectDescriptionsListView.SelectedItems[0], false, this);
+                MantraEffectDescriptionForm form = new MantraEffectDescriptionForm(MantraPracticeEffectDescriptionsListView.SelectedItems[0], false, this, "PracticeEffectDescription");
                 form.ShowDialog();
             }
         }
