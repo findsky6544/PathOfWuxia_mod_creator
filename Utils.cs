@@ -563,18 +563,18 @@ namespace 侠之道mod制作器
                 BufferPromoteAction bufferPromoteAction = (BufferPromoteAction)bufferNode;
 
                 BattleProperty battleProperty = bufferPromoteAction.Property;
-
+                string bufferStr2 = "";
                 if (battleProperty == BattleProperty.HP || battleProperty == BattleProperty.Max_HP)
                 {
-                    bufferStr += EnumData.GetDisplayName(BattleProperty.HP);
+                    bufferStr2 += EnumData.GetDisplayName(BattleProperty.HP);
                 }
                 else if (battleProperty == BattleProperty.MP || battleProperty == BattleProperty.Max_MP)
                 {
-                    bufferStr += EnumData.GetDisplayName(BattleProperty.MP);
+                    bufferStr2 += EnumData.GetDisplayName(BattleProperty.MP);
                 }
                 else
                 {
-                    bufferStr += EnumData.GetDisplayName(bufferPromoteAction.Property);
+                    bufferStr2 += EnumData.GetDisplayName(bufferPromoteAction.Property);
                 }
 
 
@@ -586,25 +586,25 @@ namespace 侠之道mod制作器
 
                 if (bufferPromoteAction.Method != Method.Multiply)
                 {
-                    bufferStr += " " + EnumData.GetDisplayName(bufferPromoteAction.Method)
+                    bufferStr2 += " " + EnumData.GetDisplayName(bufferPromoteAction.Method)
                         + " " + valueStr
                          + " 上限 " + bufferPromoteAction.ValueLimit;
                 }
                 else
                 {
-                    bufferStr += " 增加 " + EnumData.GetDisplayName(bufferPromoteAction.Property) + " 的基础值的 " + bufferPromoteAction.Value + "%" + " 上限 "
+                    bufferStr2 += " 增加 " + EnumData.GetDisplayName(bufferPromoteAction.Property) + " 的基础值的 " + bufferPromoteAction.Value + "%" + " 上限 "
                         + bufferPromoteAction.ValueLimit;
                 }
 
                 //移动距离提升属性
                 if (bufferNode.GetType() == typeof(BufferMovePromoteAction))
                 {
-                    bufferStr += "每1移动距离 " + bufferStr;
+                    bufferStr += "每1移动距离 " + bufferStr2;
                 }
                 //回合数提升属性
                 else if (bufferNode.GetType() == typeof(BufferTurnPromoteAction))
                 {
-                    bufferStr += "每1回合 " + bufferStr;
+                    bufferStr += "每1回合 " + bufferStr2;
                 }
                 //部队数提升属性
                 else if (bufferNode.GetType() == typeof(BufferUnitPromoteAction))
@@ -612,42 +612,42 @@ namespace 侠之道mod制作器
                     BufferUnitPromoteAction bufferUnitPromoteAction = (BufferUnitPromoteAction)bufferNode;
                     bufferStr += "距离 " + bufferUnitPromoteAction.Distance + " 格内每有1个 " + EnumData.GetDisplayName(bufferUnitPromoteAction.UnitFaction)
                         + (bufferUnitPromoteAction.Gender == Gender.All ? "" : " " + EnumData.GetDisplayName(bufferUnitPromoteAction.Gender))
-                        + ", " + bufferStr;
+                        + ", " + bufferStr2;
                 }
                 //战斗行动数值数提升属性
                 else if (bufferNode.GetType() == typeof(BufferNumberOfBattleActionsPromoteAction))
                 {
                     BufferNumberOfBattleActionsPromoteAction bufferNumberOfBattleActionsPromoteAction = (BufferNumberOfBattleActionsPromoteAction)bufferNode;
-                    bufferStr += "每1" + EnumData.GetDisplayName(bufferNumberOfBattleActionsPromoteAction.actions) + " " + bufferStr;
+                    bufferStr += "每1" + EnumData.GetDisplayName(bufferNumberOfBattleActionsPromoteAction.actions) + " " + bufferStr2;
                 }
                 //正面状态重数提升属性
                 else if (bufferNode.GetType() == typeof(BufferPositiveStatePromoteAction))
                 {
                     BufferPositiveStatePromoteAction bufferPositiveStatePromoteAction = (BufferPositiveStatePromoteAction)bufferNode;
-                    bufferStr += "每有1重 " + EnumData.GetDisplayName(bufferPositiveStatePromoteAction.Staus) + " " + bufferStr;
+                    bufferStr += "每有1重 " + EnumData.GetDisplayName(bufferPositiveStatePromoteAction.Staus) + " " + bufferStr2;
                 }
                 //负面状态重数提升属性
                 else if (bufferNode.GetType() == typeof(BufferNegativeStatePromoteAction))
                 {
                     BufferNegativeStatePromoteAction bufferNegativeStatePromoteAction = (BufferNegativeStatePromoteAction)bufferNode;
-                    bufferStr += "每有1重 " + EnumData.GetDisplayName(bufferNegativeStatePromoteAction.Staus) + " " + bufferStr;
+                    bufferStr += "每有1重 " + EnumData.GetDisplayName(bufferNegativeStatePromoteAction.Staus) + " " + bufferStr2;
                 }
                 //攻击距离提升属性
                 else if (bufferNode.GetType() == typeof(BufferDistancePromoteAction))
                 {
                     BufferDistancePromoteAction bufferDistancePromoteAction = (BufferDistancePromoteAction)bufferNode;
-                    bufferStr += "超过 " + bufferDistancePromoteAction.MinDis + " 格每1格" + " " + bufferStr;
+                    bufferStr += "超过 " + bufferDistancePromoteAction.MinDis + " 格每1格" + " " + bufferStr2;
                 }
                 //攻击者剩馀移动数提升属性
                 else if (bufferNode.GetType() == typeof(NumberOfMovementsPromoteAction))
                 {
-                    bufferStr = "每1格剩余移动数 " + bufferStr;
+                    bufferStr = "每1格剩余移动数 " + bufferStr2;
                 }
                 //重数提升属性
                 else if (bufferNode.GetType() == typeof(BufferOverlayPromoteAction))
                 {
                     BufferOverlayPromoteAction bufferOverlayPromoteAction = (BufferOverlayPromoteAction)bufferNode;
-                    bufferStr += (bufferOverlayPromoteAction.isTarget ? "目标" : "自身") + " 每有1重 " + DataManager.getBuffersName(bufferOverlayPromoteAction.bufferid) + " " + bufferStr;
+                    bufferStr += (bufferOverlayPromoteAction.isTarget ? "目标" : "自身") + " 每有1重 " + DataManager.getBuffersName(bufferOverlayPromoteAction.bufferid) + " " + bufferStr2;
                 }
                 else
                 {
