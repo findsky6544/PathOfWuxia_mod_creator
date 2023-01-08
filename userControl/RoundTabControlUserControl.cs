@@ -2,6 +2,7 @@
 using System;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace 侠之道mod制作器
@@ -161,22 +162,38 @@ namespace 侠之道mod制作器
 
         private void deleteRoundButton_Click(object sender, EventArgs e)
         {
-            if (RoundListView.SelectedItems.Count > 0)
+            try
             {
-                string RoundId = RoundListView.SelectedItems[0].SubItems[1].Text;
-
-                if (File.Exists(MainForm.savePath + MainForm.modName + "\\" + DataManager.modTextFilePath + "\\" + RoundId + ".json"))
+                if (RoundListView.SelectedItems.Count > 0)
                 {
+                    string RoundId = RoundListView.SelectedItems[0].SubItems[0].Text;
+
                     if (MessageBox.Show("确认删除吗？", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
                     {
-                        //删除文件
-                        File.Delete(MainForm.savePath + MainForm.modName + "\\" + DataManager.modTextFilePath + "\\" + RoundId + ".json");
+                        //写文件
+                        string savePath = MainForm.savePath + MainForm.modName + "\\" + DataManager.modTextFilePath + "/Round_modify.txt";
+                        string content = "";
+                        using (StreamReader sr = new StreamReader(savePath))
+                        {
+                            content = "\r\n" + sr.ReadToEnd() + "\r\n";
+                        }
+                        if (content.Contains("\r\n" + RoundId + "\t"))
+                        {
+                            string pattern = "\r\n" + RoundId + ".+?\r\n";
+                            Regex rgx = new Regex(pattern);
+                            content = rgx.Replace(content, "\r\n");
+                        }
+
+                        using (StreamWriter sw = new StreamWriter(savePath))
+                        {
+                            sw.Write(content.Trim());
+                        }
+                        DataManager.LoadTextfile(typeof(Round), savePath, true);
 
                         MainForm mainForm = (MainForm)Parent;
 
-                        DataManager.dict["Round_cus"].Remove(RoundId);
                         //如果原配置文件里没有这个buff，则从所有数据里移除这个buff
-                        if (!File.Exists(DataManager.textFilePath + "\\" + RoundId + ".json"))
+                        if (!DataManager.dict["Round"].Contains(RoundId))
                         {
                             DataManager.allRoundLvis.Remove(RoundId);
                             RoundListView.Items.Remove(RoundListView.SelectedItems[0]);
@@ -196,7 +213,7 @@ namespace 侠之道mod制作器
                             {
                                 for (int i = 0; i < RoundListView.Items.Count; i++)
                                 {
-                                    if (RoundListView.Items[i].SubItems[1].Text == RoundId)
+                                    if (RoundListView.Items[i].SubItems[0].Text == RoundId)
                                     {
                                         RoundListView.Items[i] = lvi;
                                         break;
@@ -212,6 +229,10 @@ namespace 侠之道mod制作器
                         deleteRoundButton.Enabled = false;
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -240,9 +261,9 @@ namespace 侠之道mod制作器
         {
             string filePath = DataManager.textFilePath + "\\" + "Round.txt";
 
-            if (RoundListView.SelectedItems.Count > 0 && RoundListView.SelectedItems[0].SubItems[RoundListView.SelectedItems[0].SubItems.Count - 1].Text == "1" && File.Exists(MainForm.savePath + MainForm.modName + "\\" + DataManager.modTextFilePath + "\\" + "Round.txt"))
+            if (RoundListView.SelectedItems.Count > 0 && RoundListView.SelectedItems[0].SubItems[RoundListView.SelectedItems[0].SubItems.Count - 1].Text == "1" && File.Exists(MainForm.savePath + MainForm.modName + "\\" + DataManager.modTextFilePath + "\\" + "Round_modify.txt"))
             {
-                filePath = MainForm.savePath + MainForm.modName + "\\" + DataManager.modTextFilePath + "\\" + "Round.txt";
+                filePath = MainForm.savePath + MainForm.modName + "\\" + DataManager.modTextFilePath + "\\" + "Round_modify.txt";
             }
             System.Diagnostics.Process.Start(filePath);
         }
@@ -251,9 +272,9 @@ namespace 侠之道mod制作器
         {
             string filePath = DataManager.textFilePath + "\\" + "Round.txt";
 
-            if (RoundListView.SelectedItems.Count > 0 && RoundListView.SelectedItems[0].SubItems[RoundListView.SelectedItems[0].SubItems.Count - 1].Text == "1" && File.Exists(MainForm.savePath + MainForm.modName + "\\" + DataManager.modTextFilePath + "\\" + "Round.txt"))
+            if (RoundListView.SelectedItems.Count > 0 && RoundListView.SelectedItems[0].SubItems[RoundListView.SelectedItems[0].SubItems.Count - 1].Text == "1" && File.Exists(MainForm.savePath + MainForm.modName + "\\" + DataManager.modTextFilePath + "\\" + "Round_modify.txt"))
             {
-                filePath = MainForm.savePath + MainForm.modName + "\\" + DataManager.modTextFilePath + "\\" + "Round.txt";
+                filePath = MainForm.savePath + MainForm.modName + "\\" + DataManager.modTextFilePath + "\\" + "Round_modify.txt";
             }
 
             System.Diagnostics.ProcessStartInfo psi = new System.Diagnostics.ProcessStartInfo("Explorer.exe");

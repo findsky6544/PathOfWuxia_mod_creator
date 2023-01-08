@@ -198,7 +198,7 @@ namespace 侠之道mod制作器
                     loadDataFormThread.Start();
                     DataManager.LoadBuffer(false);
                     loadDataForm.getOneProgressBar().Value++;
-                    loadDataForm.getOneLabel().Text = loadDataForm.getOneProgressBar().Value + "\\" + loadDataForm.getOneProgressBar().Maximum;
+                    loadDataForm.getOneLabel().Text = loadDataForm.getOneProgressBar().Value + "/" + loadDataForm.getOneProgressBar().Maximum;
                 }
                 DataManager.allBufferLvis = DataManager.createBufferLvis();
 
@@ -216,7 +216,7 @@ namespace 侠之道mod制作器
                         loadDataFormThread.Start();
                         DataManager.LoadBattleSchedule(false);
                         loadDataForm.getOneProgressBar().Value++;
-                        loadDataForm.getOneLabel().Text = loadDataForm.getOneProgressBar().Value + "\\" + loadDataForm.getOneProgressBar().Maximum;
+                        loadDataForm.getOneLabel().Text = loadDataForm.getOneProgressBar().Value + "/" + loadDataForm.getOneProgressBar().Maximum;
                     }
                     DataManager.allBattleScheduleLvis = DataManager.createBattleScheduleLvis();
 
@@ -231,7 +231,7 @@ namespace 侠之道mod制作器
                         loadDataFormThread.Start();
                         DataManager.LoadConfigSchedule(false);
                         loadDataForm.getOneProgressBar().Value++;
-                        loadDataForm.getOneLabel().Text = loadDataForm.getOneProgressBar().Value + "\\" + loadDataForm.getOneProgressBar().Maximum;
+                        loadDataForm.getOneLabel().Text = loadDataForm.getOneProgressBar().Value + "/" + loadDataForm.getOneProgressBar().Maximum;
                     }
                     DataManager.allConfigScheduleLvis = DataManager.createConfigScheduleLvis();
 
@@ -252,7 +252,7 @@ namespace 侠之道mod制作器
                     {
                         loadDataForm.getOneProgressBar().Value++;
                     }
-                    loadDataForm.getOneLabel().Text = loadDataForm.getOneProgressBar().Value + "\\" + loadDataForm.getOneProgressBar().Maximum;
+                    loadDataForm.getOneLabel().Text = loadDataForm.getOneProgressBar().Value + "/" + loadDataForm.getOneProgressBar().Maximum;
                 }
                 DataManager.allCinematicLvis = DataManager.createCinematicLvis();
 
@@ -269,7 +269,7 @@ namespace 侠之道mod制作器
                     loadDataFormThread.Start();
                     DataManager.LoadTextfile(name);
                     loadDataForm.getOneProgressBar().Value++;
-                    loadDataForm.getOneLabel().Text = loadDataForm.getOneProgressBar().Value + "\\" + loadDataForm.getOneProgressBar().Maximum;
+                    loadDataForm.getOneLabel().Text = loadDataForm.getOneProgressBar().Value + "/" + loadDataForm.getOneProgressBar().Maximum;
                 }
                 Type clazz = Type.GetType("侠之道mod制作器.DataManager");
                 FieldInfo field = clazz.GetField("all" + name + "Lvis");

@@ -2,6 +2,7 @@
 using System;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace 侠之道mod制作器
@@ -161,22 +162,38 @@ namespace 侠之道mod制作器
 
         private void deleteStringTableButton_Click(object sender, EventArgs e)
         {
-            if (StringTableListView.SelectedItems.Count > 0)
+            try
             {
-                string StringTableId = StringTableListView.SelectedItems[0].SubItems[1].Text;
-
-                if (File.Exists(MainForm.savePath + MainForm.modName + "\\" + DataManager.modTextFilePath + "\\" + StringTableId + ".json"))
+                if (StringTableListView.SelectedItems.Count > 0)
                 {
+                    string StringTableId = StringTableListView.SelectedItems[0].SubItems[0].Text;
+
                     if (MessageBox.Show("确认删除吗？", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
                     {
-                        //删除文件
-                        File.Delete(MainForm.savePath + MainForm.modName + "\\" + DataManager.modTextFilePath + "\\" + StringTableId + ".json");
+                        //写文件
+                        string savePath = MainForm.savePath + MainForm.modName + "\\" + DataManager.modTextFilePath + "/StringTable_modify.txt";
+                        string content = "";
+                        using (StreamReader sr = new StreamReader(savePath))
+                        {
+                            content = "\r\n" + sr.ReadToEnd() + "\r\n";
+                        }
+                        if (content.Contains("\r\n" + StringTableId + "\t"))
+                        {
+                            string pattern = "\r\n" + StringTableId + ".+?\r\n";
+                            Regex rgx = new Regex(pattern);
+                            content = rgx.Replace(content, "\r\n");
+                        }
+
+                        using (StreamWriter sw = new StreamWriter(savePath))
+                        {
+                            sw.Write(content.Trim());
+                        }
+                        DataManager.LoadTextfile(typeof(StringTable), savePath, true);
 
                         MainForm mainForm = (MainForm)Parent;
 
-                        DataManager.dict["StringTable_cus"].Remove(StringTableId);
                         //如果原配置文件里没有这个buff，则从所有数据里移除这个buff
-                        if (!File.Exists(DataManager.textFilePath + "\\" + StringTableId + ".json"))
+                        if (!DataManager.dict["StringTable"].Contains(StringTableId))
                         {
                             DataManager.allStringTableLvis.Remove(StringTableId);
                             StringTableListView.Items.Remove(StringTableListView.SelectedItems[0]);
@@ -196,7 +213,7 @@ namespace 侠之道mod制作器
                             {
                                 for (int i = 0; i < StringTableListView.Items.Count; i++)
                                 {
-                                    if (StringTableListView.Items[i].SubItems[1].Text == StringTableId)
+                                    if (StringTableListView.Items[i].SubItems[0].Text == StringTableId)
                                     {
                                         StringTableListView.Items[i] = lvi;
                                         break;
@@ -212,6 +229,10 @@ namespace 侠之道mod制作器
                         deleteStringTableButton.Enabled = false;
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -240,9 +261,9 @@ namespace 侠之道mod制作器
         {
             string filePath = DataManager.textFilePath + "\\" + "StringTable.txt";
 
-            if (StringTableListView.SelectedItems.Count > 0 && StringTableListView.SelectedItems[0].SubItems[StringTableListView.SelectedItems[0].SubItems.Count - 1].Text == "1" && File.Exists(MainForm.savePath + MainForm.modName + "\\" + DataManager.modTextFilePath + "\\" + "StringTable.txt"))
+            if (StringTableListView.SelectedItems.Count > 0 && StringTableListView.SelectedItems[0].SubItems[StringTableListView.SelectedItems[0].SubItems.Count - 1].Text == "1" && File.Exists(MainForm.savePath + MainForm.modName + "\\" + DataManager.modTextFilePath + "\\" + "StringTable_modify.txt"))
             {
-                filePath = MainForm.savePath + MainForm.modName + "\\" + DataManager.modTextFilePath + "\\" + "StringTable.txt";
+                filePath = MainForm.savePath + MainForm.modName + "\\" + DataManager.modTextFilePath + "\\" + "StringTable_modify.txt";
             }
             System.Diagnostics.Process.Start(filePath);
         }
@@ -251,9 +272,9 @@ namespace 侠之道mod制作器
         {
             string filePath = DataManager.textFilePath + "\\" + "StringTable.txt";
 
-            if (StringTableListView.SelectedItems.Count > 0 && StringTableListView.SelectedItems[0].SubItems[StringTableListView.SelectedItems[0].SubItems.Count - 1].Text == "1" && File.Exists(MainForm.savePath + MainForm.modName + "\\" + DataManager.modTextFilePath + "\\" + "StringTable.txt"))
+            if (StringTableListView.SelectedItems.Count > 0 && StringTableListView.SelectedItems[0].SubItems[StringTableListView.SelectedItems[0].SubItems.Count - 1].Text == "1" && File.Exists(MainForm.savePath + MainForm.modName + "\\" + DataManager.modTextFilePath + "\\" + "StringTable_modify.txt"))
             {
-                filePath = MainForm.savePath + MainForm.modName + "\\" + DataManager.modTextFilePath + "\\" + "StringTable.txt";
+                filePath = MainForm.savePath + MainForm.modName + "\\" + DataManager.modTextFilePath + "\\" + "StringTable_modify.txt";
             }
 
             System.Diagnostics.ProcessStartInfo psi = new System.Diagnostics.ProcessStartInfo("Explorer.exe");

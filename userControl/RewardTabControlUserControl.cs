@@ -2,6 +2,7 @@
 using System;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace 侠之道mod制作器
@@ -161,22 +162,38 @@ namespace 侠之道mod制作器
 
         private void deleteRewardButton_Click(object sender, EventArgs e)
         {
-            if (RewardListView.SelectedItems.Count > 0)
+            try
             {
-                string RewardId = RewardListView.SelectedItems[0].SubItems[1].Text;
-
-                if (File.Exists(MainForm.savePath + MainForm.modName + "\\" + DataManager.modTextFilePath + "\\" + RewardId + ".json"))
+                if (RewardListView.SelectedItems.Count > 0)
                 {
+                    string RewardId = RewardListView.SelectedItems[0].SubItems[0].Text;
+
                     if (MessageBox.Show("确认删除吗？", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
                     {
-                        //删除文件
-                        File.Delete(MainForm.savePath + MainForm.modName + "\\" + DataManager.modTextFilePath + "\\" + RewardId + ".json");
+                        //写文件
+                        string savePath = MainForm.savePath + MainForm.modName + "\\" + DataManager.modTextFilePath + "/Reward_modify.txt";
+                        string content = "";
+                        using (StreamReader sr = new StreamReader(savePath))
+                        {
+                            content = "\r\n" + sr.ReadToEnd() + "\r\n";
+                        }
+                        if (content.Contains("\r\n" + RewardId + "\t"))
+                        {
+                            string pattern = "\r\n" + RewardId + ".+?\r\n";
+                            Regex rgx = new Regex(pattern);
+                            content = rgx.Replace(content, "\r\n");
+                        }
+
+                        using (StreamWriter sw = new StreamWriter(savePath))
+                        {
+                            sw.Write(content.Trim());
+                        }
+                        DataManager.LoadTextfile(typeof(Reward), savePath, true);
 
                         MainForm mainForm = (MainForm)Parent;
 
-                        DataManager.dict["reward_cus"].Remove(RewardId);
                         //如果原配置文件里没有这个buff，则从所有数据里移除这个buff
-                        if (!File.Exists(DataManager.textFilePath + "\\" + RewardId + ".json"))
+                        if (!DataManager.dict["Reward"].Contains(RewardId))
                         {
                             DataManager.allRewardLvis.Remove(RewardId);
                             RewardListView.Items.Remove(RewardListView.SelectedItems[0]);
@@ -184,7 +201,7 @@ namespace 侠之道mod制作器
                         //否则重新读取数据并替换
                         else
                         {
-                            Reward reward = DataManager.getData<Reward>(RewardId);
+                            Reward Reward = DataManager.getData<Reward>(RewardId);
 
                             ListViewItem lvi = DataManager.createRewardLvi(RewardId);
                             if (DataManager.allRewardLvis.ContainsKey(RewardId))
@@ -196,7 +213,7 @@ namespace 侠之道mod制作器
                             {
                                 for (int i = 0; i < RewardListView.Items.Count; i++)
                                 {
-                                    if (RewardListView.Items[i].SubItems[1].Text == RewardId)
+                                    if (RewardListView.Items[i].SubItems[0].Text == RewardId)
                                     {
                                         RewardListView.Items[i] = lvi;
                                         break;
@@ -212,6 +229,10 @@ namespace 侠之道mod制作器
                         deleteRewardButton.Enabled = false;
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -240,9 +261,9 @@ namespace 侠之道mod制作器
         {
             string filePath = DataManager.textFilePath + "\\" + "Reward.txt";
 
-            if (RewardListView.SelectedItems.Count > 0 && RewardListView.SelectedItems[0].SubItems[RewardListView.SelectedItems[0].SubItems.Count - 1].Text == "1" && File.Exists(MainForm.savePath + MainForm.modName + "\\" + DataManager.modTextFilePath + "\\" + "Reward.txt"))
+            if (RewardListView.SelectedItems.Count > 0 && RewardListView.SelectedItems[0].SubItems[RewardListView.SelectedItems[0].SubItems.Count - 1].Text == "1" && File.Exists(MainForm.savePath + MainForm.modName + "\\" + DataManager.modTextFilePath + "\\" + "Reward_modify.txt"))
             {
-                filePath = MainForm.savePath + MainForm.modName + "\\" + DataManager.modTextFilePath + "\\" + "Reward.txt";
+                filePath = MainForm.savePath + MainForm.modName + "\\" + DataManager.modTextFilePath + "\\" + "Reward_modify.txt";
             }
             System.Diagnostics.Process.Start(filePath);
         }
@@ -251,9 +272,9 @@ namespace 侠之道mod制作器
         {
             string filePath = DataManager.textFilePath + "\\" + "Reward.txt";
 
-            if (RewardListView.SelectedItems.Count > 0 && RewardListView.SelectedItems[0].SubItems[RewardListView.SelectedItems[0].SubItems.Count - 1].Text == "1" && File.Exists(MainForm.savePath + MainForm.modName + "\\" + DataManager.modTextFilePath + "\\" + "Reward.txt"))
+            if (RewardListView.SelectedItems.Count > 0 && RewardListView.SelectedItems[0].SubItems[RewardListView.SelectedItems[0].SubItems.Count - 1].Text == "1" && File.Exists(MainForm.savePath + MainForm.modName + "\\" + DataManager.modTextFilePath + "\\" + "Reward_modify.txt"))
             {
-                filePath = MainForm.savePath + MainForm.modName + "\\" + DataManager.modTextFilePath + "\\" + "Reward.txt";
+                filePath = MainForm.savePath + MainForm.modName + "\\" + DataManager.modTextFilePath + "\\" + "Reward_modify.txt";
             }
 
             System.Diagnostics.ProcessStartInfo psi = new System.Diagnostics.ProcessStartInfo("Explorer.exe");

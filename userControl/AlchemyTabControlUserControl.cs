@@ -202,7 +202,7 @@ namespace 侠之道mod制作器
                     if (MessageBox.Show("确认删除吗？", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
                     {
                         //写文件
-                        string savePath = MainForm.savePath + MainForm.modName + "\\" +DataManager.modTextFilePath + "/Alchemy.txt";
+                        string savePath = MainForm.savePath + MainForm.modName + "\\" +DataManager.modTextFilePath + "/Alchemy_modify.txt";
                         string content = "";
                         using (StreamReader sr = new StreamReader(savePath))
                         {
@@ -292,9 +292,9 @@ namespace 侠之道mod制作器
         {
             string filePath = DataManager.textFilePath + "\\" + "Alchemy.txt";
 
-            if (AlchemyListView.SelectedItems.Count > 0 && AlchemyListView.SelectedItems[0].SubItems[AlchemyListView.SelectedItems[0].SubItems.Count - 1].Text == "1" && File.Exists(MainForm.savePath + MainForm.modName + "\\" + DataManager.modTextFilePath + "\\" + "Alchemy.txt"))
+            if (AlchemyListView.SelectedItems.Count > 0 && AlchemyListView.SelectedItems[0].SubItems[AlchemyListView.SelectedItems[0].SubItems.Count - 1].Text == "1" && File.Exists(MainForm.savePath + MainForm.modName + "\\" + DataManager.modTextFilePath + "\\" + "Alchemy_modify.txt"))
             {
-                filePath = MainForm.savePath + MainForm.modName + "\\" + DataManager.modTextFilePath + "\\" + "Alchemy.txt";
+                filePath = MainForm.savePath + MainForm.modName + "\\" + DataManager.modTextFilePath + "\\" + "Alchemy_modify.txt";
             }
             System.Diagnostics.Process.Start(filePath);
         }
@@ -303,9 +303,9 @@ namespace 侠之道mod制作器
         {
             string filePath = DataManager.textFilePath + "\\" + "Alchemy.txt";
 
-            if (AlchemyListView.SelectedItems.Count > 0 && AlchemyListView.SelectedItems[0].SubItems[AlchemyListView.SelectedItems[0].SubItems.Count - 1].Text == "1" && File.Exists(MainForm.savePath + MainForm.modName + "\\" + DataManager.modTextFilePath + "\\" + "Alchemy.txt"))
+            if (AlchemyListView.SelectedItems.Count > 0 && AlchemyListView.SelectedItems[0].SubItems[AlchemyListView.SelectedItems[0].SubItems.Count - 1].Text == "1" && File.Exists(MainForm.savePath + MainForm.modName + "\\" + DataManager.modTextFilePath + "\\" + "Alchemy_modify.txt"))
             {
-                filePath = MainForm.savePath + MainForm.modName + "\\" + DataManager.modTextFilePath + "\\" + "Alchemy.txt";
+                filePath = MainForm.savePath + MainForm.modName + "\\" + DataManager.modTextFilePath + "\\" + "Alchemy_modify.txt";
             }
 
             System.Diagnostics.ProcessStartInfo psi = new System.Diagnostics.ProcessStartInfo("Explorer.exe");

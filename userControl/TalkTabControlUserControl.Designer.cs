@@ -32,7 +32,7 @@ namespace 侠之道mod制作器
             this.components = new System.ComponentModel.Container();
             this.talkTabPage = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.talkListView = new 侠之道mod制作器.UserListView();
+            this.TalkListView = new 侠之道mod制作器.UserListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -79,17 +79,17 @@ namespace 侠之道mod制作器
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.talkListView);
+            this.panel2.Controls.Add(this.TalkListView);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 32);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(832, 483);
             this.panel2.TabIndex = 2;
             // 
-            // talkListView
+            // TalkListView
             // 
-            this.talkListView.AllowColumnReorder = true;
-            this.talkListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.TalkListView.AllowColumnReorder = true;
+            this.TalkListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
@@ -99,21 +99,21 @@ namespace 侠之道mod制作器
             this.columnHeader5,
             this.columnHeader11,
             this.columnHeader7});
-            this.talkListView.ContextMenuStrip = this.talkContextMenuStrip;
-            this.talkListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.talkListView.FullRowSelect = true;
-            this.talkListView.HideSelection = false;
-            this.talkListView.Location = new System.Drawing.Point(0, 0);
-            this.talkListView.MultiSelect = false;
-            this.talkListView.Name = "talkListView";
-            this.talkListView.ShowItemToolTips = true;
-            this.talkListView.Size = new System.Drawing.Size(832, 483);
-            this.talkListView.TabIndex = 0;
-            this.talkListView.UseCompatibleStateImageBehavior = false;
-            this.talkListView.View = System.Windows.Forms.View.Details;
-            this.talkListView.SelectedIndexChanged += new System.EventHandler(this.talkListView_SelectedIndexChanged);
-            this.talkListView.DoubleClick += new System.EventHandler(this.talkListView_DoubleClick);
-            this.talkListView.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.talkListView_KeyPress);
+            this.TalkListView.ContextMenuStrip = this.talkContextMenuStrip;
+            this.TalkListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TalkListView.FullRowSelect = true;
+            this.TalkListView.HideSelection = false;
+            this.TalkListView.Location = new System.Drawing.Point(0, 0);
+            this.TalkListView.MultiSelect = false;
+            this.TalkListView.Name = "TalkListView";
+            this.TalkListView.ShowItemToolTips = true;
+            this.TalkListView.Size = new System.Drawing.Size(832, 483);
+            this.TalkListView.TabIndex = 0;
+            this.TalkListView.UseCompatibleStateImageBehavior = false;
+            this.TalkListView.View = System.Windows.Forms.View.Details;
+            this.TalkListView.SelectedIndexChanged += new System.EventHandler(this.talkListView_SelectedIndexChanged);
+            this.TalkListView.DoubleClick += new System.EventHandler(this.talkListView_DoubleClick);
+            this.TalkListView.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.talkListView_KeyPress);
             // 
             // columnHeader1
             // 
@@ -343,6 +343,6 @@ namespace 侠之道mod制作器
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader11;
         private System.Windows.Forms.ColumnHeader columnHeader7;
-        private UserListView talkListView;
+        private UserListView TalkListView;
     }
 }
