@@ -1000,7 +1000,6 @@ G:\visualStudioProject\侠之道mod制作器\obj\Debug\侠之道mod制作器.Ski
 G:\visualStudioProject\侠之道mod制作器\obj\Debug\侠之道mod制作器.SelectGameFormulaForm.resources
 G:\visualStudioProject\侠之道mod制作器\obj\Debug\侠之道mod制作器.StringTableInfoForm.resources
 G:\visualStudioProject\侠之道mod制作器\obj\Debug\侠之道mod制作器.StringTableTabControlUserControl.resources
-G:\visualStudioProject\侠之道mod制作器\obj\Debug\侠之道mod制作器.TalkLevelForm.resources
 G:\visualStudioProject\侠之道mod制作器\obj\Debug\侠之道mod制作器.AttackerTalkTypeConditionForm.resources
 G:\visualStudioProject\侠之道mod制作器\obj\Debug\侠之道mod制作器.BufferSkillTypeConditionForm.resources
 G:\visualStudioProject\侠之道mod制作器\obj\Debug\侠之道mod制作器.CheckPlayerTotalSkillLevelForm.resources
@@ -1011,3 +1010,4 @@ G:\visualStudioProject\侠之道mod制作器\obj\Debug\侠之道mod制作器.Tra
 G:\visualStudioProject\侠之道mod制作器\obj\Debug\侠之道mod制作器.TraitEffectTypeForm.resources
 G:\visualStudioProject\侠之道mod制作器\obj\Debug\侠之道mod制作器.TraitTabControlUserControl.resources
 G:\visualStudioProject\侠之道mod制作器\obj\Debug\侠之道mod制作器.form.AboutForm.resources
+G:\visualStudioProject\侠之道mod制作器\obj\Debug\侠之道mod制作器.SkillLevelForm.resources

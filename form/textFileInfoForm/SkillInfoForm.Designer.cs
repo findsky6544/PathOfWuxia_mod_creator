@@ -98,7 +98,7 @@ namespace 侠之道mod制作器
             "CheckPlayerGender"}, -1);
             System.Windows.Forms.ListViewItem listViewItem23 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 Player 十階武學與心法總數",
-            "CheckPlayerLevelMaxSkillsAndSkills"}, -1);
+            "CheckPlayerLevelMaxMantrasAndSkills"}, -1);
             System.Windows.Forms.ListViewItem listViewItem24 = new System.Windows.Forms.ListViewItem(new string[] {
             "檢查 Player 心法",
             "CheckPlayerSkill"}, -1);
@@ -149,7 +149,7 @@ namespace 侠之道mod制作器
             "TeammateCondition"}, -1);
             System.Windows.Forms.ListViewItem listViewItem40 = new System.Windows.Forms.ListViewItem(new string[] {
             "心法等级",
-            "SkillLevel"}, -1);
+            "MantraLevel"}, -1);
             System.Windows.Forms.ListViewItem listViewItem41 = new System.Windows.Forms.ListViewItem(new string[] {
             "招式等级",
             "SkillLevel"}, -1);

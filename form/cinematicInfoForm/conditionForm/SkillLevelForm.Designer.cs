@@ -1,7 +1,7 @@
 ﻿
 namespace 侠之道mod制作器
 {
-    partial class TalkLevelForm
+    partial class SkillLevelForm
     {
         /// <summary>
         /// Required designer variable.
@@ -101,7 +101,7 @@ namespace 侠之道mod制作器
             this.okButton.UseVisualStyleBackColor = true;
             this.okButton.Click += new System.EventHandler(this.okButton_Click);
             // 
-            // TalkLevelForm
+            // SkillLevelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -112,7 +112,7 @@ namespace 侠之道mod制作器
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.okButton);
-            this.Name = "TalkLevelForm";
+            this.Name = "SkillLevelForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "招式等级";
             ((System.ComponentModel.ISupportInitialize)(this.valueNumericUpDown)).EndInit();

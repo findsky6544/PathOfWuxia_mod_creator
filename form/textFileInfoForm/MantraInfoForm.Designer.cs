@@ -152,7 +152,7 @@ namespace 侠之道mod制作器
             "MantraLevel"}, -1);
             System.Windows.Forms.ListViewItem listViewItem41 = new System.Windows.Forms.ListViewItem(new string[] {
             "招式等级",
-            "TalkLevel"}, -1);
+            "SkillLevel"}, -1);
             System.Windows.Forms.ListViewItem listViewItem42 = new System.Windows.Forms.ListViewItem(new string[] {
             "新增養成指令",
             "NurturanceOpenOrder"}, -1);

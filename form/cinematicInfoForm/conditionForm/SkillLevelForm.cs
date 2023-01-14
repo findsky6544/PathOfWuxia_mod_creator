@@ -4,17 +4,17 @@ using System.Windows.Forms;
 
 namespace 侠之道mod制作器
 {
-    public partial class TalkLevelForm : Form
+    public partial class SkillLevelForm : Form
     {
         public bool isAdd;
         public TreeNode currentNode;
-        public TalkLevelForm()
+        public SkillLevelForm()
         {
             InitializeComponent();
 
             initOpComboBox();
         }
-        public TalkLevelForm(TreeNode currentNode, bool isAdd) : this()
+        public SkillLevelForm(TreeNode currentNode, bool isAdd) : this()
         {
             this.currentNode = currentNode;
             string fields = currentNode.Tag.ToString().Split(':')[1];
@@ -61,7 +61,7 @@ namespace 侠之道mod制作器
                 return;
             }
 
-            currentNode.Tag = "\"TalkLevel\" : " + ((ComboBoxItem)opComboBox.SelectedItem).key + ", " + valueNumericUpDown.Text;
+            currentNode.Tag = "\"SkillLevel\" : " + ((ComboBoxItem)opComboBox.SelectedItem).key + ", " + valueNumericUpDown.Text;
             currentNode.Text = Text + ":" + opComboBox.Text + " " + valueNumericUpDown.Text;
 
             DialogResult = DialogResult.OK;
