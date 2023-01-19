@@ -101,7 +101,7 @@ namespace 侠之道mod制作器
             }
 
             currentNode.Tag = "\"DefenderAddBuffAction\" : \"" + bufferIdTextBox.Text + "\", " + countNumericUpDown.Value + ", " + ((ComboBoxItem)typeComboBox.SelectedItem).key;
-            currentNode.Text = "赋予攻击者Buff: " + typeComboBox.Text + " " + DataManager.getBuffersName(bufferIdTextBox.Text) + " " + countNumericUpDown.Value + " 次";
+            currentNode.Text = "赋予防御者Buff: " + typeComboBox.Text + " " + DataManager.getBuffersName(bufferIdTextBox.Text) + " " + countNumericUpDown.Value + " 次";
             Close();
         }
 

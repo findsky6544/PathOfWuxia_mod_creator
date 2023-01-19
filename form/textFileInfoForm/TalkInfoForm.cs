@@ -310,6 +310,7 @@ namespace 侠之道mod制作器
                 if (talk.Condition == null)
                 {
                     TreeNode talkNode = parentNode.Nodes.Add(talker + ":(" + talkId + ")" + talk.Message);
+                    talkNode.Tag = "TalkAction:\"" + talk.Id + "\"";
                     if (talk.Behaviour != null)
                     {
                         readBehavior((OutputNode)talk.Behaviour.Output, talkNode);
@@ -347,6 +348,7 @@ namespace 侠之道mod制作器
                     node.ForeColor = Color.Blue;
                     TreeNode successNode = node.Nodes.Add("成功");
                     TreeNode successNode1 = successNode.Nodes.Add(talker + ":(" + talkId + ")" + talk.Message);
+                    successNode1.Tag = "TalkAction:\"" + talk.Id + "\"";
                     if (talk.Behaviour != null)
                     {
                         readBehavior((OutputNode)talk.Behaviour.Output, successNode1);
@@ -393,7 +395,7 @@ namespace 侠之道mod制作器
                 string[] discriptionArray = description.Value.Split('/');
 
                 parentNode.Text += "(" + Utils.getFlowNodeStr(discriptionArray, actionNode, 0) + ")";
-                parentNode.Tag += actionNode.GetType().Name + ",";
+                parentNode.Tag += ","+actionNode.GetType().Name;
             }
 
         }
@@ -536,6 +538,37 @@ namespace 侠之道mod制作器
         private void contextMenuStrip1_Opening(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Utils.createCinematicContextMenuStrip(contextMenuStrip1, BehaviourTreeView, e);
+        }
+
+        private void contextMenuStrip2_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Utils.createCinematicContextMenuStrip(contextMenuStrip2, talkFlowTreeView, e);
+
+            TreeNode node = talkFlowTreeView.SelectedNode;
+
+            if (node.Tag == null)
+            {
+                e.Cancel = true;
+                return;
+            }
+
+            string tag = node.Tag.ToString();
+
+            if (tag.Contains("jumpTo"))
+            {
+                ToolStripMenuItem tsmi = new ToolStripMenuItem("跳转至该节点");
+                tsmi.Click += jumpToTalkToolStripMenuItem_Click;
+                contextMenuStrip2.Items.Add(tsmi);
+            }
+
+            if (contextMenuStrip2.Items.Count > 0)
+            {
+                e.Cancel = false;
+            }
+            else
+            {
+                e.Cancel = true;
+            }
         }
 
         private void readBuffToolStripMenuItem_Click(object sender, EventArgs e)

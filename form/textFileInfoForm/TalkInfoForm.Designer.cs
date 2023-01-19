@@ -544,11 +544,11 @@ namespace 侠之道mod制作器
             this.ConditioNaddNodeButton = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.ConditionTreeView = new System.Windows.Forms.TreeView();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
             this.ConditionAddLogicalNodeButton = new System.Windows.Forms.Button();
             this.ConditionEditNodeButton = new System.Windows.Forms.Button();
             this.ConditionDeleteNodeButton = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.selectFailTalkButton = new System.Windows.Forms.Button();
             this.selectNextTalkButton = new System.Windows.Forms.Button();
@@ -660,6 +660,7 @@ namespace 侠之道mod制作器
             this.panel10 = new System.Windows.Forms.Panel();
             this.updateFlowTreeButton = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -924,12 +925,6 @@ namespace 侠之道mod制作器
             this.ConditionTreeView.Size = new System.Drawing.Size(691, 376);
             this.ConditionTreeView.TabIndex = 12;
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
-            // 
             // panel4
             // 
             this.panel4.AllowDrop = true;
@@ -973,6 +968,12 @@ namespace 侠之道mod制作器
             this.ConditionDeleteNodeButton.Text = "删除选中节点";
             this.ConditionDeleteNodeButton.UseVisualStyleBackColor = true;
             this.ConditionDeleteNodeButton.Click += new System.EventHandler(this.deleteTalkNodeButton_Click);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // panel1
             // 
@@ -2390,7 +2391,7 @@ namespace 侠之道mod制作器
             // 
             // talkFlowTreeView
             // 
-            this.talkFlowTreeView.ContextMenuStrip = this.contextMenuStrip1;
+            this.talkFlowTreeView.ContextMenuStrip = this.contextMenuStrip2;
             this.talkFlowTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.talkFlowTreeView.FullRowSelect = true;
             this.talkFlowTreeView.HideSelection = false;
@@ -2426,6 +2427,12 @@ namespace 侠之道mod制作器
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(1056, 37);
             this.panel9.TabIndex = 25;
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(181, 26);
+            this.contextMenuStrip2.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip2_Opening);
             // 
             // TalkInfoForm
             // 
@@ -2616,5 +2623,6 @@ namespace 侠之道mod制作器
         public System.Windows.Forms.TextBox MessageTextBox;
         private System.Windows.Forms.Panel panel10;
         public System.Windows.Forms.Button updateFlowTreeButton;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
     }
 }
